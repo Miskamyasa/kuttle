@@ -1,3 +1,5 @@
+import React, {useMemo} from "react";
+
 import {
   BoxProps,
   Heading,
@@ -6,13 +8,14 @@ import {
   Text,
   Flex,
 } from "@chakra-ui/react";
-import { DetailsCard, Detail } from "../details-card/DetailsCard";
-import { Blueprint } from "../../services/BlueprintService";
-import { useMemo } from "react";
+
+import {Blueprint} from "../../services/BlueprintService";
+import {DetailsCard, Detail} from "../details-card/DetailsCard";
+
 
 export type BluePrintCardProps = BoxProps & {
-  blueprint: Blueprint;
-  isActive?: boolean;
+  blueprint: Blueprint,
+  isActive?: boolean,
 };
 
 export const BluePrintCard: React.FC<BluePrintCardProps> = ({
@@ -48,19 +51,30 @@ export const BluePrintCard: React.FC<BluePrintCardProps> = ({
       gap={2}
       p={4}
       pb={2}
-      shadow={isActive ? "kuttle.pink" : "none"}
-    >
+      shadow={isActive ? "kuttle.pink" : "none"}>
       <VStack>
-        <Heading as="h2" size="md" mt={2} noOfLines={1}>
+        <Heading
+          as="h2"
+          size="md"
+          mt={2}
+          noOfLines={1}>
           {blueprint.name}
         </Heading>
-        <Text size="md" mt={2} noOfLines={[1, 2]}>
+        <Text
+          size="md"
+          mt={2}
+          noOfLines={[1, 2]}>
           {blueprint.description}
         </Text>
       </VStack>
-      <HStack gap={5} display="flex" justifyContent="center">
+      <HStack
+        gap={5}
+        display="flex"
+        justifyContent="center">
         {details.map((detail) => (
-          <DetailsCard key={detail.title + detail.value} detail={detail} />
+          <DetailsCard
+            key={detail.title + detail.value}
+            detail={detail} />
         ))}
       </HStack>
     </Flex>

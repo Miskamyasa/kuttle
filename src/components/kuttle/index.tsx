@@ -1,9 +1,12 @@
-import { Container, Flex, Icon, Tab, TabList, Tabs } from "@chakra-ui/react";
-import { useCallback, useEffect, useState } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
-import { Info } from "phosphor-react";
-import { ROUTES } from "../../routes";
-import { Header } from "../header";
+import React, {useCallback, useEffect, useState} from "react";
+
+import {Container, Flex, Icon, Tab, TabList, Tabs} from "@chakra-ui/react";
+import {Info} from "phosphor-react";
+import {Link, Outlet, useLocation} from "react-router-dom";
+
+import {ROUTES} from "../../routes";
+import {Header} from "../header";
+
 
 const getRouteName = (route: string) => {
   switch (route) {
@@ -40,23 +43,30 @@ export const Kuttle: React.FC = () => {
   const handleTabClick = useCallback((index: number) => {}, []);
 
   return (
-    <>
+    <React.Fragment>
       <Header />
       <Tabs
         index={selectedTabIndex}
         onChange={handleTabClick}
         maxW="100vw"
-        overflowX="auto"
-      >
-        <Flex align="center" justify="space-between">
+        overflowX="auto">
+        <Flex
+          align="center"
+          justify="space-between">
           <TabList>
             {Object.values(ROUTES).map((route) => (
-              <Link to={route} key={`Tab_${route}`}>
+              <Link
+                to={route}
+                key={`Tab_${route}`}>
                 <Tab>{getRouteName(route)}</Tab>
               </Link>
             ))}
           </TabList>
-          <Icon color="kuttle.black" w={6} h={6} mr={3}>
+          <Icon
+            color="kuttle.black"
+            w={6}
+            h={6}
+            mr={3}>
             <Info size="24px" />
           </Icon>
         </Flex>
@@ -67,10 +77,9 @@ export const Kuttle: React.FC = () => {
         px={0}
         maxW="full"
         bg="kuttle.gray"
-        minH="calc(100vh - 2 * 48px)"
-      >
+        minH="calc(100vh - 2 * 48px)">
         <Outlet />
       </Container>
-    </>
+    </React.Fragment>
   );
 };

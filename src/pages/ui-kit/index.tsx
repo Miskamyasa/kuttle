@@ -11,34 +11,54 @@ import {
   Tag,
   Wrap,
 } from "@chakra-ui/react";
-import { Select } from "../../components/kuttle-select";
+
+import {Select} from "../../components/kuttle-select";
+
 
 const TypographyHeading: React.FC = () => (
-  <VStack gap={4} align="flex-start">
-    <Heading as="h1" size="xl">
+  <VStack
+    gap={4}
+    align="flex-start">
+    <Heading
+      as="h1"
+      size="xl">
       Typography (Heading)
     </Heading>
-    <Heading as="h1" size="xl">
+    <Heading
+      as="h1"
+      size="xl">
       Heading size=XL
     </Heading>
-    <Heading as="h1" size="lg">
+    <Heading
+      as="h1"
+      size="lg">
       Heading size=LG
     </Heading>
-    <Heading as="h2" size="md">
+    <Heading
+      as="h2"
+      size="md">
       Heading size=MD (default)
     </Heading>
-    <Heading as="h3" size="sm">
+    <Heading
+      as="h3"
+      size="sm">
       Heading size=SM
     </Heading>
-    <Heading as="h3" size="XS">
+    <Heading
+      as="h3"
+      size="XS">
       Heading size=XS
     </Heading>
   </VStack>
 );
 
 const TypographyText: React.FC = () => (
-  <VStack gap={4} align="flex-start">
-    <Heading as="h1" size="xl">
+  <VStack
+    gap={4}
+    align="flex-start">
+    <Heading
+      as="h1"
+      size="xl">
       Typography (Text)
     </Heading>
     <Text size="xl">Text size=XL</Text>
@@ -50,31 +70,46 @@ const TypographyText: React.FC = () => (
 );
 
 const Shadows: React.FC = () => (
-  <VStack gap={4} align="flex-start">
-    <Heading as="h1" size="xl">
+  <VStack
+    gap={4}
+    align="flex-start">
+    <Heading
+      as="h1"
+      size="xl">
       Shadows
     </Heading>
     <HStack gap={4}>
-      <Box shadow="kuttle.default" w={20} h={20} />
-      <Box shadow="kuttle.pink" w={20} h={20} />
+      <Box
+        shadow="kuttle.default"
+        w={20}
+        h={20} />
+      <Box
+        shadow="kuttle.pink"
+        w={20}
+        h={20} />
     </HStack>
   </VStack>
 );
 
 const Radii: React.FC = () => (
-  <VStack gap={4} align="flex-start">
-    <Heading as="h1" size="xl">
+  <VStack
+    gap={4}
+    align="flex-start">
+    <Heading
+      as="h1"
+      size="xl">
       Radii
     </Heading>
-    <Grid gap={4} templateColumns="repeat(4, 1fr)">
+    <Grid
+      gap={4}
+      templateColumns="repeat(4, 1fr)">
       <Box
         w={20}
         h={20}
         borderRadius="none"
         textAlign="center"
         pt={5}
-        shadow="kuttle.default"
-      >
+        shadow="kuttle.default">
         <Text>None</Text>
       </Box>
       <Box
@@ -83,8 +118,7 @@ const Radii: React.FC = () => (
         borderRadius="sm"
         textAlign="center"
         pt={5}
-        shadow="kuttle.default"
-      >
+        shadow="kuttle.default">
         <Text>SM</Text>
       </Box>
       <Box
@@ -93,8 +127,7 @@ const Radii: React.FC = () => (
         borderRadius="base"
         textAlign="center"
         pt={5}
-        shadow="kuttle.default"
-      >
+        shadow="kuttle.default">
         <Text>Base</Text>
       </Box>
       <Box
@@ -103,8 +136,7 @@ const Radii: React.FC = () => (
         borderRadius="md"
         textAlign="center"
         pt={5}
-        shadow="kuttle.default"
-      >
+        shadow="kuttle.default">
         <Text>MD</Text>
       </Box>
       <Box
@@ -113,8 +145,7 @@ const Radii: React.FC = () => (
         borderRadius="lg"
         textAlign="center"
         pt={5}
-        shadow="kuttle.default"
-      >
+        shadow="kuttle.default">
         <Text>LG</Text>
       </Box>
       <Box
@@ -123,8 +154,7 @@ const Radii: React.FC = () => (
         borderRadius="xl"
         textAlign="center"
         pt={5}
-        shadow="kuttle.default"
-      >
+        shadow="kuttle.default">
         <Text>XL</Text>
       </Box>
       <Box
@@ -133,8 +163,7 @@ const Radii: React.FC = () => (
         borderRadius="2xl"
         textAlign="center"
         pt={5}
-        shadow="kuttle.default"
-      >
+        shadow="kuttle.default">
         <Text>2XL</Text>
       </Box>
       <Box
@@ -143,8 +172,7 @@ const Radii: React.FC = () => (
         borderRadius="3xl"
         textAlign="center"
         pt={5}
-        shadow="kuttle.default"
-      >
+        shadow="kuttle.default">
         <Text>3XL</Text>
       </Box>
       <Box
@@ -153,8 +181,7 @@ const Radii: React.FC = () => (
         borderRadius="full"
         textAlign="center"
         pt={5}
-        shadow="kuttle.default"
-      >
+        shadow="kuttle.default">
         <Text>Full</Text>
       </Box>
     </Grid>
@@ -162,8 +189,12 @@ const Radii: React.FC = () => (
 );
 
 const Tags: React.FC = () => (
-  <VStack gap={4} align="flex-start">
-    <Heading as="h1" size="xl">
+  <VStack
+    gap={4}
+    align="flex-start">
+    <Heading
+      as="h1"
+      size="xl">
       Tag
     </Heading>
     <HStack gap={4}>
@@ -176,49 +207,79 @@ const Tags: React.FC = () => (
 );
 
 const Buttons: React.FC = () => (
-  <VStack gap={4} align="flex-start">
-    <Heading as="h1" size="xl">
+  <VStack
+    gap={4}
+    align="flex-start">
+    <Heading
+      as="h1"
+      size="xl">
       Buttons
     </Heading>
     <Wrap spacing={4}>
-      <VStack gap={4} align="flex-start">
+      <VStack
+        gap={4}
+        align="flex-start">
         <Button size="xs">Default, XS</Button>
         <Button size="sm">Default, SM</Button>
         <Button size="md">Default, MD (Default size)</Button>
         <Button size="lg">Default, LG</Button>
         <Button size="xl">Default, XL</Button>
       </VStack>
-      <VStack gap={4} align="flex-start">
-        <Button variant="outline" size="xs">
+      <VStack
+        gap={4}
+        align="flex-start">
+        <Button
+          variant="outline"
+          size="xs">
           Outline, XS
         </Button>
-        <Button variant="outline" size="sm">
+        <Button
+          variant="outline"
+          size="sm">
           Outline, SM
         </Button>
-        <Button variant="outline" size="md">
+        <Button
+          variant="outline"
+          size="md">
           Outline, MD (Default size)
         </Button>
-        <Button variant="outline" size="lg">
+        <Button
+          variant="outline"
+          size="lg">
           Outline, LG
         </Button>
-        <Button variant="outline" size="xl">
+        <Button
+          variant="outline"
+          size="xl">
           Outline, XL
         </Button>
       </VStack>
-      <VStack gap={4} align="flex-start">
-        <Button variant="highlight" size="xs">
+      <VStack
+        gap={4}
+        align="flex-start">
+        <Button
+          variant="highlight"
+          size="xs">
           Highlight, XS
         </Button>
-        <Button variant="highlight" size="sm">
+        <Button
+          variant="highlight"
+          size="sm">
           Highlight, SM
         </Button>
-        <Button variant="highlight" size="md">
+        <Button
+          variant="highlight"
+          size="md">
           Highlight, MD (Default size)
         </Button>
-        <Button variant="highlight" size="lg">
+        <Button
+          variant="highlight"
+          size="lg">
           Highlight, LG
         </Button>
-        <Button variant="highlight" size="xl">
+        <Button
+          variant="highlight"
+          size="xl">
           OutHighlightline, XL
         </Button>
       </VStack>
@@ -227,19 +288,32 @@ const Buttons: React.FC = () => (
 );
 
 const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
+  {value: "chocolate", label: "Chocolate"},
+  {value: "strawberry", label: "Strawberry"},
+  {value: "vanilla", label: "Vanilla"},
 ];
 
 const Selects: React.FC = () => (
-  <VStack gap={4} w="60">
-    <Heading as="h1" size="xl">
+  <VStack
+    gap={4}
+    w="60">
+    <Heading
+      as="h1"
+      size="xl">
       Select
     </Heading>
-    <Select size="sm" placeholder="SM size" options={options} />
-    <Select size="md" placeholder="MD size" options={options} />
-    <Select size="lg" placeholder="LG size" options={options} />
+    <Select
+      size="sm"
+      placeholder="SM size"
+      options={options} />
+    <Select
+      size="md"
+      placeholder="MD size"
+      options={options} />
+    <Select
+      size="lg"
+      placeholder="LG size"
+      options={options} />
   </VStack>
 );
 

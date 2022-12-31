@@ -1,12 +1,14 @@
-import { BoxProps, VStack, Text } from "@chakra-ui/react";
+import {BoxProps, VStack, Text} from "@chakra-ui/react";
+import React from "react";
+
 
 export type DetailsCardProps = BoxProps & {
-  detail: Detail;
+  detail: Detail,
 };
 
 export type Detail = {
-  title: string;
-  value: string;
+  title: string,
+  value: string,
 };
 
 export const DetailsCard: React.FC<DetailsCardProps> = ({
@@ -14,11 +16,19 @@ export const DetailsCard: React.FC<DetailsCardProps> = ({
   ...boxProps
 }) => {
   return (
-    <VStack h={12} w={76} bg="kuttle.gray" {...boxProps}>
-      <Text size="xs" color="kuttle.gray.strong">
+    <VStack
+      h={12}
+      w={76}
+      bg="kuttle.gray"
+      {...boxProps}>
+      <Text
+        size="xs"
+        color="kuttle.gray.strong">
         {detail.title}
       </Text>
-      <Text size="sm" fontWeight="medium">
+      <Text
+        size="sm"
+        fontWeight="medium">
         {detail.value}
       </Text>
     </VStack>

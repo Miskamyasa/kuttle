@@ -1,7 +1,8 @@
-import { tabsAnatomy } from "@chakra-ui/anatomy";
-import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
+import {tabsAnatomy} from "@chakra-ui/anatomy";
+import {createMultiStyleConfigHelpers} from "@chakra-ui/react";
 
-const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+
+const {defineMultiStyleConfig} = createMultiStyleConfigHelpers(
   tabsAnatomy.keys
 );
 

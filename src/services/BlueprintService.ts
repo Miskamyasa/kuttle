@@ -1,13 +1,14 @@
-import { Costs, Environment, MOCKED_ENVIRONMENTS } from "./EnvironmentService";
-import { asyncSleep } from "./utils";
+import {Costs, Environment, MOCKED_ENVIRONMENTS} from "./EnvironmentService";
+import {asyncSleep} from "./utils";
+
 
 export type Blueprint = {
-  id: string;
-  name: string;
-  description?: string;
-  versions: string[];
-  costs: Costs;
-  environment: Environment;
+  id: string,
+  name: string,
+  description?: string,
+  versions: string[],
+  costs: Costs,
+  environment: Environment,
 };
 
 const MOCKED_BLUEPRINTS: Blueprint[] = [

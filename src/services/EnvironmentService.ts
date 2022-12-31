@@ -2,73 +2,73 @@ export type Region = string;
 export type ShortRegion = string;
 
 export type Costs = {
-  hourly: number;
-  daily: number;
-  weekly: number;
-  monthly: number;
-  annually: number;
+  hourly: number,
+  daily: number,
+  weekly: number,
+  monthly: number,
+  annually: number,
 };
 
 export type Deployment = {
-  method: string;
-  version?: string;
-  branch?: string;
-  pathToManifest: string;
+  method: string,
+  version?: string,
+  branch?: string,
+  pathToManifest: string,
 };
 
 export type Service = {
-  name: string;
-  version: string;
-  cpu: number;
-  memory: number;
-  gitRepo: string;
-  costs: Costs;
-  deployment: Deployment;
-  public: boolean;
+  name: string,
+  version: string,
+  cpu: number,
+  memory: number,
+  gitRepo: string,
+  costs: Costs,
+  deployment: Deployment,
+  public: boolean,
 };
 
 export type Ressource = {
-  name: string;
+  name: string,
 };
 
 export type Secret = {
-  name: string;
-  valueFrom: string;
+  name: string,
+  valueFrom: string,
 };
 
 export type Variable = {
-  name: string;
-  value: string;
+  name: string,
+  value: string,
 };
 
 export type Lifetime = {
-  created: Date;
-  destroy: Date;
+  created: Date,
+  destroy: Date,
 };
 
 export type Logs = {
-  destination: string;
-  url: string;
+  destination: string,
+  url: string,
 };
 
 export type Links = {
-  url: string;
+  url: string,
 };
 export type Environment = {
-  name: string;
-  fullName: string;
-  region: Region;
-  shortRegion: ShortRegion;
-  services: Service[];
-  ressources: Ressource[];
-  pipelines: Service[];
-  variables: Variable[];
-  secrets: Secret[];
-  lifetime: Lifetime;
-  costs: Costs;
-  logs: Logs;
-  links: Links;
-  comment: string;
+  name: string,
+  fullName: string,
+  region: Region,
+  shortRegion: ShortRegion,
+  services: Service[],
+  ressources: Ressource[],
+  pipelines: Service[],
+  variables: Variable[],
+  secrets: Secret[],
+  lifetime: Lifetime,
+  costs: Costs,
+  logs: Logs,
+  links: Links,
+  comment: string,
 };
 
 export const MOCKED_SERVICES: Service[] = [

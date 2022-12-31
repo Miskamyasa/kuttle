@@ -1,5 +1,10 @@
-import { extendTheme } from "@chakra-ui/react";
-import { Heading } from "./Heading";
+import {extendTheme} from "@chakra-ui/react";
+
+import {Button} from "./Button";
+import {Heading} from "./Heading";
+import {Tabs} from "./Tabs";
+import {Tag} from "./Tag";
+import {Text} from "./Text";
 import {
   colors,
   fonts,
@@ -12,10 +17,7 @@ import {
   shadows,
   space,
 } from "./tokens";
-import { Text } from "./Text";
-import { Button } from "./Button";
-import { Tabs } from "./Tabs";
-import { Tag } from "./Tag";
+
 
 export const kuttieThemeV1 = extendTheme({
   styles: {

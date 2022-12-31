@@ -1,7 +1,8 @@
-import { tagAnatomy } from "@chakra-ui/anatomy";
-import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
+import {tagAnatomy} from "@chakra-ui/anatomy";
+import {createMultiStyleConfigHelpers} from "@chakra-ui/react";
 
-const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+
+const {defineMultiStyleConfig} = createMultiStyleConfigHelpers(
   tagAnatomy.keys
 );
 

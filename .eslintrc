@@ -1,0 +1,130 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": ["vite.config.js"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "import"
+  ],
+  "rules": {
+    "semi": "off", // переопределяется в "@typescript-eslint/semi"
+    "@typescript-eslint/semi": ["error", "always"],
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/member-delimiter-style": [
+      "error", {
+        "multilineDetection": "brackets",
+        "multiline": {
+          "delimiter": "comma",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "comma",
+          "requireLast": false
+        },
+        "overrides": {
+          "interface": {
+            "multiline": {
+              "delimiter": "semi"
+            },
+            "singleline": {
+              "delimiter": "semi"
+            }
+          }
+        }
+      }],
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "groups": ["builtin", "external", "internal", "parent", "sibling"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/newline-after-import": ["error", {"count": 2}],
+    "no-duplicate-imports": "error",
+    "comma-dangle": ["error", "always-multiline"],
+    "quotes": ["error", "double", {"avoidEscape": true}],
+    "indent": ["error", 2, {"SwitchCase": 1}],
+    "no-console": "warn",
+    "no-use-before-define": "error",
+    "linebreak-style": ["error", "unix"],
+    "object-curly-spacing": ["error", "never"],
+    "arrow-body-style": "off",
+    "max-len": ["warn", {"code": 120}],
+    "operator-linebreak": ["error", "before"],
+    "no-multiple-empty-lines": ["error", {"max": 2, "maxEOF": 0}],
+    "jsx-quotes": ["error", "prefer-double"],
+    "react/jsx-closing-bracket-location": [
+      "error", {
+        "nonEmpty": "after-props",
+        "selfClosing": "after-props"
+      }
+    ],
+    "react-hooks/exhaustive-deps": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-first-prop-new-line": ["error", "multiline"],
+    "react/jsx-max-props-per-line": ["error", {"maximum": 1}],
+    "react/jsx-fragments": ["error", "element"],
+    "react/jsx-tag-spacing": [
+      "error", {
+        "closingSlash": "never",
+        "beforeSelfClosing": "always",
+        "afterOpening": "never",
+        "beforeClosing": "allow"
+      }
+    ],
+    "react/jsx-wrap-multilines": [
+      "error", {
+        "declaration": "parens",
+        "assignment": "parens",
+        "return": "parens",
+        "arrow": "parens",
+        "condition": "ignore",
+        "logical": "ignore",
+        "prop": "ignore"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "excludedFiles": ["*.spec.js"],
+      "extends": ["plugin:@typescript-eslint/recommended-requiring-type-checking"],
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+      }
+    },
+    {
+      "files": ["*.spec.js"],
+      "globals": {
+        "jsdom": "readonly"
+      },
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "rules": {
+        "jest/require-top-level-describe": "error",
+        "jest/no-try-expect": "off"
+      }
+    }
+  ]
+}

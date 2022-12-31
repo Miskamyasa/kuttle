@@ -1,7 +1,10 @@
-import { Flex, Text, VStack } from "@chakra-ui/react";
-import { useCallback, useEffect, useState } from "react";
-import { Blueprint, BlueprintService } from "../../services/BlueprintService";
-import { BluePrintCard } from "../../components/blue-print-card";
+import React, {useCallback, useEffect, useState} from "react";
+
+import {Flex, Text, VStack} from "@chakra-ui/react";
+
+import {BluePrintCard} from "../../components/blue-print-card";
+import {Blueprint, BlueprintService} from "../../services/BlueprintService";
+
 
 export const Blueprints: React.FC = () => {
   const [bluePrints, setBlueprints] = useState<Blueprint[]>();
@@ -17,21 +20,26 @@ export const Blueprints: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <Flex my={5} mx={12} align="center" justify="space-between">
+    <React.Fragment>
+      <Flex
+        my={5}
+        mx={12}
+        align="center"
+        justify="space-between">
         <Text size="lg">Blueprints</Text>
       </Flex>
-      <VStack w={560} gap={4}>
-        {bluePrints &&
-          bluePrints.map((blueprint) => (
+      <VStack
+        w={560}
+        gap={4}>
+        {bluePrints
+          && bluePrints.map((blueprint) => (
             <BluePrintCard
               onClick={() => handleBlueprintClick(blueprint)}
               key={blueprint.id}
               isActive={blueprint.id === activeBlueprintId}
-              blueprint={blueprint}
-            />
+              blueprint={blueprint} />
           ))}
       </VStack>
-    </>
+    </React.Fragment>
   );
 };
