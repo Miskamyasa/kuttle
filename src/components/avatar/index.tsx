@@ -1,44 +1,27 @@
-import React from "react";
-
-import {Image, BoxProps, Flex, Text} from "@chakra-ui/react";
+import {FC} from "react";
 
 
-export const Avatar: React.FC<BoxProps & { name?: string, img?: string }> = ({
-  name,
-  img,
-  ...box
-}) => {
-  if (img) {
-    return (
-      <Image
-        src={img}
-        alt={name || "Avatar"}
-        w={6}
-        h={6}
-        borderRadius="full" />
-    );
-  }
+type TProps = { name?: string, imgSrc?: string };
 
-  const letters = name
-    ?.split(" ")
-    .map((p) => p.charAt(0).toUpperCase())
-    .join("");
+
+export const Avatar: FC<TProps> = ({name, imgSrc}) => {
+  const children = imgSrc ? (
+    <img
+      className={"h-6 w-6"}
+      src={imgSrc}
+      alt={name || "Avatar"} />
+  ) : (
+    <span className={"text-xs font-semibold text-white"}>
+      {name
+        ?.split(" ")
+        .map((p) => p.charAt(0).toUpperCase())
+        .join("")}
+    </span>
+  );
 
   return (
-    <Flex
-      bg="kuttle.gradient"
-      {...box}
-      w={6}
-      h={6}
-      borderRadius="full"
-      align="center"
-      justify="center">
-      <Text
-        size="sm"
-        color="kuttle.white"
-        fontWeight="semibold">
-        {letters}
-      </Text>
-    </Flex>
+    <div className={"kuttle-gradient w-6 h-6 rounded-full overflow-hidden flex justify-center items-center"}>
+      {children}
+    </div>
   );
 };
