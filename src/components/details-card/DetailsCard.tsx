@@ -1,5 +1,6 @@
-import {BoxProps, VStack, Text} from "@chakra-ui/react";
 import React from "react";
+
+import {BoxProps, VStack, Text} from "@chakra-ui/react";
 
 
 export type DetailsCardProps = BoxProps & {

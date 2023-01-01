@@ -2,7 +2,6 @@ import {extendTheme} from "@chakra-ui/react";
 
 import {Button} from "./Button";
 import {Heading} from "./Heading";
-import {Tabs} from "./Tabs";
 import {Tag} from "./Tag";
 import {Text} from "./Text";
 import {
@@ -36,7 +35,6 @@ export const kuttieThemeV1 = extendTheme({
     Heading,
     Text,
     Button,
-    Tabs,
     Tag,
   },
 });
