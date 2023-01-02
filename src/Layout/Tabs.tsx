@@ -12,7 +12,7 @@ export const Tabs = () => {
             <NavLink
               key={route.path}
               to={route.path}>
-              <div>{route.title}</div>
+              <span>{route.title}</span>
             </NavLink>
           );
         }

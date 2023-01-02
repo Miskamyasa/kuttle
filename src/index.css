@@ -13,7 +13,7 @@ body {
   }
 
   .kuttle-tabs a {
-    @apply block bg-white py-3 px-4 font-bold text-sm text-gray1;
+    @apply block bg-white py-3 px-6 font-bold text-sm text-gray1;
     line-height: 24px;
     border-right: 1px solid theme('colors.gray3');
   }

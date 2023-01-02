@@ -1,4 +1,5 @@
-import {Heading} from "@chakra-ui/react";
-
-
-export const Review: React.FC = () => <Heading size="lg">Review</Heading>;
+export const Review: React.FC = () => {
+  return (
+    <h1 className={"text-2xl font-semibold"}>Review</h1>
+  );
+};
