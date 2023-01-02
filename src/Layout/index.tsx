@@ -29,7 +29,7 @@ export const Layout: React.FC = () => {
           <InfoIcon size={24} />
         </div>
       </div>
-      <div className={"py-3 px-4 max-w-full bg-gray3 min-h-[calc(100vh_-_2_*_48px)]"}>
+      <div className={"py-3 max-w-full bg-gray3 min-h-[calc(100vh_-_2_*_48px)]"}>
         <Outlet />
       </div>
     </Fragment>
