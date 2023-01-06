@@ -5,7 +5,6 @@ import {Outlet} from "react-router-dom";
 import {Avatar} from "../components/avatar";
 import {Logo} from "../components/logo";
 import {BellRingIcon} from "../icons/BellRing";
-import {InfoIcon} from "../icons/Info";
 
 import {Tabs} from "./Tabs";
 
@@ -13,9 +12,12 @@ import {Tabs} from "./Tabs";
 export const Layout: React.FC = () => {
   return (
     <Fragment>
-      <div className={"bg-blueDark flex justify-between items-center py-3 px-4"}>
-        <Logo />
-        <div className={"flex items-center gap-3"}>
+      <div className={"bg-blueDark flex items-center h-16 px-10"}>
+        <div className={"mr-12"}>
+          <Logo />
+        </div>
+        <Tabs />
+        <div className={"ml-auto flex items-center gap-3"}>
           <BellRingIcon
             size={24}
             fill={"#fff"}
@@ -23,13 +25,8 @@ export const Layout: React.FC = () => {
           <Avatar name={"John Smith"} />
         </div>
       </div>
-      <div className={"flex justify-between items-center"}>
-        <Tabs />
-        <div className={"py-3 px-4"}>
-          <InfoIcon size={24} />
-        </div>
-      </div>
-      <div className={"py-3 max-w-full bg-gray3 min-h-[calc(100vh_-_2_*_48px)]"}>
+      {/* 64px in calc function is h-16 for header */}
+      <div className={"py-3 max-w-full bg-gray3 min-h-[calc(100vh_-_64px)]"}>
         <Outlet />
       </div>
     </Fragment>

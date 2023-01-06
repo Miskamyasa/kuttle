@@ -12,7 +12,6 @@ module.exports = {
         gray2: "#BDBDBD",
         gray3: "#F4F2F3",
       },
-
     },
   },
   plugins: [],

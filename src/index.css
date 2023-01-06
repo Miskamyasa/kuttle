@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --kuttleGradient: linear-gradient(91.08deg, #FF00A1 -2.69%, #FFAC30 111.81%);
+}
 
 body {
   font-family: Inter, sans-serif;
@@ -9,17 +12,29 @@ body {
 
 @layer components {
   .kuttle-gradient {
-    background-image: linear-gradient(91.08deg, #FF00A1 -2.69%, #FFAC30 111.81%);
+    background-image: var(--kuttleGradient);
   }
 
   .kuttle-tabs a {
-    @apply block bg-white py-3 px-6 font-bold text-sm text-gray1;
-    line-height: 24px;
-    border-right: 1px solid theme('colors.gray3');
+    @apply relative h-full flex justify-center items-center px-6;
   }
 
-  .kuttle-tabs a.active {
-    @apply bg-gray3 text-blueDark;
+  .kuttle-tabs a > span {
+    @apply font-bold text-sm text-gray1 transition-colors;
+  }
+
+  .kuttle-tabs a:hover > span,
+  .kuttle-tabs a.active > span {
+    @apply text-white;
+  }
+
+  .kuttle-tabs a:after {
+    content: " ";
+    @apply block absolute left-0 bottom-0 w-full h-1 kuttle-gradient transition-opacity opacity-0;
+  }
+
+  .kuttle-tabs a.active:after {
+    @apply opacity-100;
   }
 
 }
