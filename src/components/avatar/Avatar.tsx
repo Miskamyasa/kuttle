@@ -1,10 +1,10 @@
-import {FC} from "react"
+import {ReactElement} from "react"
 
 
-type TProps = { name?: string, imgSrc?: string }
+type _Props = { name?: string, imgSrc?: string }
 
 
-const Avatar: FC<TProps> = ({name, imgSrc}) => {
+export default function Avatar({name, imgSrc}: _Props): ReactElement {
   const children = imgSrc ? (
     <img
       className={"h-6 w-6"}
@@ -25,5 +25,3 @@ const Avatar: FC<TProps> = ({name, imgSrc}) => {
     </div>
   )
 }
-
-export default Avatar

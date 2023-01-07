@@ -3,9 +3,11 @@ import "./index.css"
 import React from "react"
 
 import ReactDOM from "react-dom/client"
+import {Provider} from "react-redux"
 import {RouterProvider} from "react-router-dom"
 
 import router from "./Navigation/router"
+import {store} from "./store/createStore"
 
 
 const element = document.getElementById("root")
@@ -13,7 +15,9 @@ const element = document.getElementById("root")
 if (element) {
   ReactDOM.createRoot(element).render(
     <React.StrictMode>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </React.StrictMode>
   )
 }

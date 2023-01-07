@@ -1,14 +1,17 @@
-import React, {FC} from "react"
+import React, {ReactElement} from "react"
 
+import Header from "../../components/account/Header"
+import AccountWrapper from "../../components/account/Wrapper"
 import Page from "../../components/page/Page"
 
 
-const Dashboard: FC = () => {
+export default function Dashboard(): ReactElement {
   return (
     <Page>
-      <h1 className={"text-2xl font-semibold"}>Dashboard</h1>
+      <AccountWrapper>
+        <Header accountName={"Dashaboard"} />
+
+      </AccountWrapper>
     </Page>
   )
 }
-
-export default Dashboard

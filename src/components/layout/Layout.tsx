@@ -1,14 +1,14 @@
-import React, {Fragment} from "react"
+import React, {Fragment, ReactElement} from "react"
 
 import {Outlet} from "react-router-dom"
 
 import Avatar from "../avatar/Avatar"
 import BellRing from "../icons/BellRing"
 import Logo from "../logo/Logo"
-import Tabs from "../Tabs/Tabs"
+import Tabs from "../tabs/Tabs"
 
 
-const Layout: React.FC = () => {
+export default function Layout(): ReactElement {
   return (
     <Fragment>
       <div className={"bg-blueDark flex items-center h-16 px-10"}>
@@ -25,12 +25,9 @@ const Layout: React.FC = () => {
         </div>
       </div>
       {/* 64px in calc function is h-16 for header */}
-      <div className={"py-3 max-w-full bg-gray3 min-h-[calc(100vh_-_64px)]"}>
+      <div className={"max-w-full bg-gray3 min-h-[calc(100vh_-_64px)]"}>
         <Outlet />
       </div>
     </Fragment>
   )
 }
-
-
-export default Layout

@@ -1,9 +1,11 @@
+import {ReactElement} from "react"
+
 import {NavLink} from "react-router-dom"
 
 import {pages} from "../../Navigation/router"
 
 
-const Tabs = () => {
+export default function Tabs(): ReactElement {
   return (
     <div className={"h-full kuttle-tabs flex items-center"}>
       {pages.map((route) => {
@@ -20,5 +22,3 @@ const Tabs = () => {
     </div>
   )
 }
-
-export default Tabs

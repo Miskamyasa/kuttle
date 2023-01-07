@@ -1,12 +1,12 @@
-import {FC} from "react"
+import {ReactElement} from "react"
 
 
-type TProps = {
+type _Props = {
   fill?: string,
   size?: number,
 }
 
-export const InfoIcon: FC<TProps> = ({fill = "#000", size = 33}) => {
+export default function Info({fill = "#000", size = 33}: _Props): ReactElement {
   return (
     <svg
       width={size}

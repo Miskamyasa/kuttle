@@ -113,6 +113,8 @@
       "extends": ["plugin:@typescript-eslint/recommended-requiring-type-checking"],
       "plugins": ["@typescript-eslint"],
       "rules": {
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/type-annotation-spacing": "error"
       }
     },
     {

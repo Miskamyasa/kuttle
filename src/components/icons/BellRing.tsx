@@ -1,13 +1,13 @@
-import {FC} from "react"
+import {ReactElement} from "react"
 
 
-type TProps = {
+type _Props = {
   fill?: string,
   ringing?: boolean,
   size?: number,
 }
 
-const BellRing: FC<TProps> = ({fill = "#000", size = 33, ringing}) => {
+export default function BellRing({fill = "#000", size = 33, ringing}: _Props): ReactElement {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -42,6 +42,3 @@ const BellRing: FC<TProps> = ({fill = "#000", size = 33, ringing}) => {
     </svg>
   )
 }
-
-
-export default BellRing
