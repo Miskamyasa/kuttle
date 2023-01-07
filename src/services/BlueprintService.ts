@@ -1,5 +1,5 @@
-import {Costs, Environment, MOCKED_ENVIRONMENTS} from "./EnvironmentService";
-import {asyncSleep} from "./utils";
+import {Costs, Environment, MOCKED_ENVIRONMENTS} from "./EnvironmentService"
+import {asyncSleep} from "./utils"
 
 
 export type Blueprint = {
@@ -9,7 +9,7 @@ export type Blueprint = {
   versions: string[],
   costs: Costs,
   environment: Environment,
-};
+}
 
 const MOCKED_BLUEPRINTS: Blueprint[] = [
   {
@@ -27,11 +27,11 @@ const MOCKED_BLUEPRINTS: Blueprint[] = [
     },
     environment: MOCKED_ENVIRONMENTS[0],
   },
-];
+]
 
 export class BlueprintService {
   public static async fetchBlueprints(): Promise<Blueprint[]> {
-    await asyncSleep(1000);
-    return MOCKED_BLUEPRINTS;
+    await asyncSleep(1000)
+    return MOCKED_BLUEPRINTS
   }
 }

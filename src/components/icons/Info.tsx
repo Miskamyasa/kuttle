@@ -1,10 +1,10 @@
-import {FC} from "react";
+import {FC} from "react"
 
 
 type TProps = {
   fill?: string,
   size?: number,
-};
+}
 
 export const InfoIcon: FC<TProps> = ({fill = "#000", size = 33}) => {
   return (
@@ -29,5 +29,5 @@ export const InfoIcon: FC<TProps> = ({fill = "#000", size = 33}) => {
         fill={fill}
         d="M16.25 12.437a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" />
     </svg>
-  );
-};
+  )
+}

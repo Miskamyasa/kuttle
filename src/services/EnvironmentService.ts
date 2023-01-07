@@ -1,5 +1,5 @@
-export type Region = string;
-export type ShortRegion = string;
+export type Region = string
+export type ShortRegion = string
 
 export type Costs = {
   hourly: number,
@@ -7,14 +7,14 @@ export type Costs = {
   weekly: number,
   monthly: number,
   annually: number,
-};
+}
 
 export type Deployment = {
   method: string,
   version?: string,
   branch?: string,
   pathToManifest: string,
-};
+}
 
 export type Service = {
   name: string,
@@ -25,35 +25,35 @@ export type Service = {
   costs: Costs,
   deployment: Deployment,
   public: boolean,
-};
+}
 
 export type Ressource = {
   name: string,
-};
+}
 
 export type Secret = {
   name: string,
   valueFrom: string,
-};
+}
 
 export type Variable = {
   name: string,
   value: string,
-};
+}
 
 export type Lifetime = {
   created: Date,
   destroy: Date,
-};
+}
 
 export type Logs = {
   destination: string,
   url: string,
-};
+}
 
 export type Links = {
   url: string,
-};
+}
 export type Environment = {
   name: string,
   fullName: string,
@@ -69,7 +69,7 @@ export type Environment = {
   logs: Logs,
   links: Links,
   comment: string,
-};
+}
 
 export const MOCKED_SERVICES: Service[] = [
   {
@@ -93,7 +93,7 @@ export const MOCKED_SERVICES: Service[] = [
     },
     public: false,
   },
-];
+]
 
 export const MOCKED_RESSOURCES: Ressource[] = [
   {
@@ -102,7 +102,7 @@ export const MOCKED_RESSOURCES: Ressource[] = [
   {
     name: "redis",
   },
-];
+]
 
 const MOCKED_SECRETS: Secret[] = [
   {
@@ -113,7 +113,7 @@ const MOCKED_SECRETS: Secret[] = [
     name: "DB_PASSWORD",
     valueFrom: "hashicorp",
   },
-];
+]
 
 const MOCKED_VARIABLES: Variable[] = [
   {
@@ -124,7 +124,7 @@ const MOCKED_VARIABLES: Variable[] = [
     name: "SENTRY_DSN",
     value: "12111221112122212112",
   },
-];
+]
 
 export const MOCKED_ENVIRONMENTS: Environment[] = [
   {
@@ -157,7 +157,9 @@ export const MOCKED_ENVIRONMENTS: Environment[] = [
     },
     comment: "",
   },
-];
+]
 export class EnvironmentService {
-  public static async fetchEnvironments() {}
+  public static async fetchEnvironments() {
+    // ...
+  }
 }

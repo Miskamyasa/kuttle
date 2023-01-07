@@ -1,15 +1,14 @@
-import React, {Fragment} from "react";
+import React, {Fragment} from "react"
 
-import {Outlet} from "react-router-dom";
+import {Outlet} from "react-router-dom"
 
-import {Avatar} from "../components/avatar";
-import {Logo} from "../components/logo";
-import {BellRingIcon} from "../icons/BellRing";
+import Avatar from "../avatar/Avatar"
+import BellRing from "../icons/BellRing"
+import Logo from "../logo/Logo"
+import Tabs from "../Tabs/Tabs"
 
-import {Tabs} from "./Tabs";
 
-
-export const Layout: React.FC = () => {
+const Layout: React.FC = () => {
   return (
     <Fragment>
       <div className={"bg-blueDark flex items-center h-16 px-10"}>
@@ -18,7 +17,7 @@ export const Layout: React.FC = () => {
         </div>
         <Tabs />
         <div className={"ml-auto flex items-center gap-3"}>
-          <BellRingIcon
+          <BellRing
             size={24}
             fill={"#fff"}
             ringing={false} />
@@ -30,5 +29,8 @@ export const Layout: React.FC = () => {
         <Outlet />
       </div>
     </Fragment>
-  );
-};
+  )
+}
+
+
+export default Layout

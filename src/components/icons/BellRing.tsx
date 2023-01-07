@@ -1,13 +1,13 @@
-import {FC} from "react";
+import {FC} from "react"
 
 
 type TProps = {
   fill?: string,
   ringing?: boolean,
   size?: number,
-};
+}
 
-export const BellRingIcon: FC<TProps> = ({fill = "#000", size = 33, ringing}) => {
+const BellRing: FC<TProps> = ({fill = "#000", size = 33, ringing}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -40,5 +40,8 @@ export const BellRingIcon: FC<TProps> = ({fill = "#000", size = 33, ringing}) =>
           clipRule="evenodd" />
       )}
     </svg>
-  );
-};
+  )
+}
+
+
+export default BellRing

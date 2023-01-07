@@ -1,9 +1,9 @@
-import {NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom"
 
-import {pages} from "../Navigation/router";
+import {pages} from "../../Navigation/router"
 
 
-export const Tabs = () => {
+const Tabs = () => {
   return (
     <div className={"h-full kuttle-tabs flex items-center"}>
       {pages.map((route) => {
@@ -14,9 +14,11 @@ export const Tabs = () => {
               to={route.path}>
               <span>{route.title}</span>
             </NavLink>
-          );
+          )
         }
       })}
     </div>
-  );
-};
+  )
+}
+
+export default Tabs

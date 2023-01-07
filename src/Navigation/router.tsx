@@ -1,8 +1,8 @@
-import {createBrowserRouter, Navigate} from "react-router-dom";
+import {createBrowserRouter, Navigate} from "react-router-dom"
 
-import {Layout} from "../Layout";
-import {Blueprints} from "../pages/blueprints";
-import {Dashboard} from "../pages/dashboard";
+import Layout from "../components/Layout/Layout"
+import Blueprints from "../pages/blueprints/Blueprints"
+import Dashboard from "../pages/dashboard/Dashboard"
 
 
 export const pages = [
@@ -24,7 +24,7 @@ export const pages = [
         to={"dashboard"} />
     ),
   },
-];
+]
 
 const root = [
   {
@@ -32,7 +32,9 @@ const root = [
     element: <Layout />,
     children: pages,
   },
-];
+]
 
 
-export const router = createBrowserRouter(root);
+const router = createBrowserRouter(root)
+
+export default router

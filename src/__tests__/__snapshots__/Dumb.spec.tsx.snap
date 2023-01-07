@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`Dumb test > renders div element 1`] = `
+<div>
+  Some Text
+</div>
+`;

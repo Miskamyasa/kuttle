@@ -4,7 +4,7 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "ignorePatterns": ["vite.config.js"],
+  "ignorePatterns": [],
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -17,7 +17,7 @@
   ],
   "rules": {
     "semi": "off", // переопределяется в "@typescript-eslint/semi"
-    "@typescript-eslint/semi": ["error", "always"],
+    "@typescript-eslint/semi": ["error", "never"],
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/member-delimiter-style": [
       "error", {
@@ -120,11 +120,9 @@
       "globals": {
         "jsdom": "readonly"
       },
-      "plugins": ["jest"],
-      "extends": ["plugin:jest/recommended"],
+      "plugins": [],
+      "extends": [],
       "rules": {
-        "jest/require-top-level-describe": "error",
-        "jest/no-try-expect": "off"
       }
     }
   ]
