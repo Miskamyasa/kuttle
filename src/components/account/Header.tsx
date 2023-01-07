@@ -1,5 +1,7 @@
 import {ReactElement} from "react"
 
+import Button from "../buttons/Button"
+
 import Name from "./Name"
 
 
@@ -9,8 +11,11 @@ type _Props = {
 
 export default function Header({accountName}: _Props): ReactElement {
   return (
-    <div className={"p-10 bg-white"}>
+    <div className={"flex justify-between items-center"}>
       <Name text={accountName} />
+      <Button
+        text={"Add New Region"}
+        variant={"primary"} />
     </div>
   )
 }

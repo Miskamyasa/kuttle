@@ -1,5 +1,6 @@
 export type CommonReducerState = {
   // ..
+  some: number,
 }
 
 export type ResetAction = {

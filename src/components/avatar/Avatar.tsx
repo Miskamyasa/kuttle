@@ -11,7 +11,7 @@ export default function Avatar({name, imgSrc}: _Props): ReactElement {
       src={imgSrc}
       alt={name || "Avatar"} />
   ) : (
-    <span className={"text-xs font-semibold text-white"}>
+    <span className={"text-xs font-bold text-white"}>
       {name
         ?.split(" ")
         .map((p) => p.charAt(0).toUpperCase())
@@ -20,7 +20,7 @@ export default function Avatar({name, imgSrc}: _Props): ReactElement {
   )
 
   return (
-    <div className={"kuttle-gradient w-6 h-6 rounded-full overflow-hidden flex justify-center items-center"}>
+    <div className={"bg-kuttle-gradient w-6 h-6 rounded-full overflow-hidden flex justify-center items-center"}>
       {children}
     </div>
   )

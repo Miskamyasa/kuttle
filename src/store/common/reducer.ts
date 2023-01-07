@@ -3,6 +3,7 @@ import {CommonReducerActions, CommonReducerState} from "./types"
 
 function resetCommonState(): CommonReducerState {
   return {
+    some: 42,
   }
 }
 

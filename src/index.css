@@ -11,7 +11,7 @@ body {
 }
 
 @layer components {
-  .kuttle-gradient {
+  .bg-kuttle-gradient {
     background-image: var(--kuttleGradient);
   }
 
@@ -30,7 +30,7 @@ body {
 
   .kuttle-tabs a:after {
     content: " ";
-    @apply block absolute left-0 bottom-0 w-full h-1 kuttle-gradient transition-opacity opacity-0;
+    @apply block absolute left-0 bottom-0 w-full h-1 bg-kuttle-gradient transition-opacity opacity-0;
   }
 
   .kuttle-tabs a.active:after {

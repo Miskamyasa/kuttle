@@ -1,10 +1,12 @@
 import {combineReducers} from "redux"
 
-import reducer from "./common/reducer"
+import commonReducer from "./common/reducer"
+import dashboardReducer from "./dashboard/reducer"
 
 
 const rootReducer = combineReducers({
-  common: reducer,
+  common: commonReducer,
+  dashboard: dashboardReducer,
 })
 
 export default rootReducer

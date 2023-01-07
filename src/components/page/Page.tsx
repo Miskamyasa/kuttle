@@ -1,10 +1,21 @@
 import {PropsWithChildren, ReactElement} from "react"
 
+import InfiniteBar from "../loaders/InfinteBar"
 
-export default function Page({children}: PropsWithChildren): ReactElement {
+
+type _Props = PropsWithChildren & {
+  loading?: boolean,
+}
+
+export default function Page({children, loading = false}: _Props): ReactElement {
   return (
-    <div className={"p-10"}>
-      {children}
+    <div className={"relative"}>
+      <div className={"absolute left-0 top-0 h-1 w-full"}>
+        {loading && <InfiniteBar />}
+      </div>
+      <div className={"p-10"}>
+        {children}
+      </div>
     </div>
   )
 }

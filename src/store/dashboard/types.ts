@@ -1,12 +1,12 @@
 import {ResetAction} from "../common/types"
+import {Account} from "../dto"
 import {Loadable} from "../types"
 
 
-type _State = {
-  // ..
-}
-
-export type DashboardReducerState = Loadable<_State>
+export type DashboardReducerState = Loadable<{
+  store: Record<Account["account_name"], Account>,
+  ids: Array<Account["account_name"]>,
+}>
 
 export type FetchDashboardAction = {
   type: "FetchDashboard",
@@ -14,7 +14,7 @@ export type FetchDashboardAction = {
 
 export type LoadDashboardAction = {
   type: "LoadDashboard",
-  payload: _State,
+  payload: Array<Account>,
 }
 
 export type FailFetchDashboardAction = {
@@ -24,3 +24,5 @@ export type FailFetchDashboardAction = {
 export type DashboardReducerActions =
   | ResetAction
   | FetchDashboardAction
+  | LoadDashboardAction
+  | FailFetchDashboardAction

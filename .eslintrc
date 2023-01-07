@@ -10,92 +10,70 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:react/recommended"
   ],
-  "plugins": [
-    "react",
-    "react-hooks",
-    "import"
-  ],
+  "plugins": ["react", "react-hooks", "import"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
-    "semi": "off", // переопределяется в "@typescript-eslint/semi"
-    "@typescript-eslint/semi": ["error", "never"],
-    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/explicit-function-return-type": "error",
+    // переопределяется в "@typescript-eslint/semi"
+    "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/member-delimiter-style": [
       "error", {
         "multilineDetection": "brackets",
-        "multiline": {
-          "delimiter": "comma",
-          "requireLast": true
-        },
-        "singleline": {
-          "delimiter": "comma",
-          "requireLast": false
-        },
-        "overrides": {
-          "interface": {
-            "multiline": {
-              "delimiter": "semi"
-            },
-            "singleline": {
-              "delimiter": "semi"
-            }
-          }
-        }
-      }],
-    "import/order": [
-      "error",
-      {
-        "pathGroups": [
-          {
-            "pattern": "react",
-            "group": "external",
-            "position": "before"
-          }
-        ],
-        "pathGroupsExcludedImportTypes": ["react"],
-        "groups": ["builtin", "external", "internal", "parent", "sibling"],
-        "newlines-between": "always",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
+        "multiline": {"delimiter": "comma", "requireLast": true},
+        "singleline": {"delimiter": "comma", "requireLast": false},
+        "overrides": {"interface": {"multiline": {"delimiter": "none"}, "singleline": {"delimiter": "comma"}}}
       }
     ],
-    "import/newline-after-import": ["error", {"count": 2}],
-    "no-duplicate-imports": "error",
-    "comma-dangle": ["error", "always-multiline"],
-    "quotes": ["error", "double", {"avoidEscape": true}],
-    "indent": ["error", 2, {"SwitchCase": 1}],
-    "no-console": "warn",
-    "no-use-before-define": "error",
-    "linebreak-style": ["error", "unix"],
-    "object-curly-spacing": ["error", "never"],
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/semi": ["error", "never"],
+    "@typescript-eslint/space-infix-ops": "error",
+    "@typescript-eslint/type-annotation-spacing": "error",
     "arrow-body-style": "off",
-    "max-len": ["warn", {"code": 120}],
-    "operator-linebreak": ["error", "before"],
-    "no-multiple-empty-lines": ["error", {"max": 2, "maxEOF": 0}],
-    "jsx-quotes": ["error", "prefer-double"],
-    "react/jsx-curly-spacing": [2, {"when": "never", "attributes": {"allowMultiline": false}, "children": true}],
-    "react/jsx-closing-bracket-location": [
+    "comma-dangle": ["error", "always-multiline"],
+    "import/newline-after-import": ["error", {"count": 2}],
+    "import/order": [
       "error", {
-        "nonEmpty": "after-props",
-        "selfClosing": "after-props"
+        "pathGroups": [{"pattern": "react", "group": "external", "position": "before"}],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {"order": "asc", "caseInsensitive": true}
       }
     ],
+    "indent": ["error", 2, {"SwitchCase": 1}],
+    "jsx-quotes": ["error", "prefer-double"],
+    "linebreak-style": ["error", "unix"],
+    "max-len": ["warn", {"code": 120}],
+    "no-console": "warn",
+    "no-duplicate-imports": "error",
+    "no-multiple-empty-lines": ["error", {"max": 2, "maxEOF": 0}],
+    "no-use-before-define": "error",
+    "object-curly-spacing": ["error", "never"],
+    "operator-linebreak": ["error", "before"],
+    "quotes": ["error", "double", {"avoidEscape": true}],
     "react-hooks/exhaustive-deps": "error",
-    "react/react-in-jsx-scope": "off",
+    "react/jsx-closing-bracket-location": ["error", {"nonEmpty": "after-props", "selfClosing": "after-props"}],
+    "react/jsx-curly-spacing": [2, {"when": "never", "attributes": {"allowMultiline": false}, "children": true}],
     "react/jsx-first-prop-new-line": ["error", "multiline"],
-    "react/jsx-max-props-per-line": ["error", {"maximum": 1}],
     "react/jsx-fragments": ["error", "element"],
+    "react/jsx-max-props-per-line": ["error", {"maximum": 1}],
     "react/jsx-tag-spacing": [
-      "error", {
-        "closingSlash": "never",
-        "beforeSelfClosing": "always",
-        "afterOpening": "never",
-        "beforeClosing": "allow"
-      }
+      "error",
+      {"closingSlash": "never", "beforeSelfClosing": "always", "afterOpening": "never", "beforeClosing": "allow"}
     ],
     "react/jsx-wrap-multilines": [
-      "error", {
+      "error",
+      {
         "declaration": "parens",
         "assignment": "parens",
         "return": "parens",
@@ -104,28 +82,23 @@
         "logical": "ignore",
         "prop": "ignore"
       }
-    ]
+    ],
+    "react/react-in-jsx-scope": "off",
+    "semi": "off"
   },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
       "excludedFiles": ["*.spec.js"],
       "extends": ["plugin:@typescript-eslint/recommended-requiring-type-checking"],
-      "plugins": ["@typescript-eslint"],
-      "rules": {
-        "@typescript-eslint/explicit-function-return-type": "error",
-        "@typescript-eslint/type-annotation-spacing": "error"
-      }
+      "plugins": ["@typescript-eslint"]
     },
     {
       "files": ["*.spec.js"],
-      "globals": {
-        "jsdom": "readonly"
-      },
+      "globals": {"jsdom": "readonly"},
       "plugins": [],
       "extends": [],
-      "rules": {
-      }
+      "rules": {}
     }
   ]
 }
