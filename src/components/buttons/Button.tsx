@@ -1,13 +1,13 @@
 import {PropsWithChildren, ReactElement, useMemo} from "react"
 
 
-type _Props = PropsWithChildren & {
-  text: string,
-  variant?: "primary" | "secondary" | "accent",
-  size?: "sm" | "md",
+interface Props extends PropsWithChildren {
+  text: string
+  variant?: "primary" | "secondary" | "accent"
+  size?: "sm" | "md"
 }
 
-export default function Button({text, children, variant = "primary", size = "md"}: _Props): ReactElement {
+export default function Button({text, children, variant = "primary", size = "md"}: Props): ReactElement {
   const className = useMemo(() => {
     let className = "border overflow-hidden whitespace-nowrap text-ellipsis text-base h-11 px-1"
     switch (variant) {

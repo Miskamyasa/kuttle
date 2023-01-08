@@ -1,12 +1,12 @@
 import {ReactElement} from "react"
 
 
-type _Props = {
-  fill?: string,
-  size?: number,
+interface Props {
+  fill?: string
+  size?: number
 }
 
-export default function Info({fill = "#000", size = 33}: _Props): ReactElement {
+export default function Info({fill = "#000", size = 33}: Props): ReactElement {
   return (
     <svg
       width={size}

@@ -1,10 +1,12 @@
 import {ReactElement} from "react"
 
 
-type _Props = { name?: string, imgSrc?: string }
+interface Props {
+  name?: string
+  imgSrc?: string
+}
 
-
-export default function Avatar({name, imgSrc}: _Props): ReactElement {
+export default function Avatar({name, imgSrc}: Props): ReactElement {
   const children = imgSrc ? (
     <img
       className={"h-6 w-6"}

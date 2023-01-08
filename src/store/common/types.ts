@@ -1,11 +1,9 @@
-export type CommonReducerState = {
-  // ..
-  some: number,
+export interface CommonReducerState {
+  some: number
 }
 
-export type ResetAction = {
-  type: "Reset",
+export interface ResetAction {
+  type: "Reset"
 }
 
-export type CommonReducerActions =
-  | ResetAction
+export type CommonReducerActions = ResetAction

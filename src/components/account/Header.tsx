@@ -5,11 +5,11 @@ import Button from "../buttons/Button"
 import Name from "./Name"
 
 
-type _Props = {
-  accountName: string,
+interface Props {
+  accountName: string
 }
 
-export default function Header({accountName}: _Props): ReactElement {
+export default function Header({accountName}: Props): ReactElement {
   return (
     <div className={"flex justify-between items-center"}>
       <Name text={accountName} />

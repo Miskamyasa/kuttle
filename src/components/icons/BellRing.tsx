@@ -1,13 +1,13 @@
 import {ReactElement} from "react"
 
 
-type _Props = {
-  fill?: string,
-  ringing?: boolean,
-  size?: number,
+interface Props {
+  fill?: string
+  ringing?: boolean
+  size?: number
 }
 
-export default function BellRing({fill = "#000", size = 33, ringing}: _Props): ReactElement {
+export default function BellRing({fill = "#000", size = 33, ringing}: Props): ReactElement {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

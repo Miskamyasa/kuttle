@@ -1,13 +1,12 @@
 import {PropsWithChildren, ReactElement} from "react"
 
+import {Loadable} from "../../helpers/types"
 import InfiniteBar from "../loaders/InfinteBar"
 
 
-type _Props = PropsWithChildren & {
-  loading?: boolean,
-}
+interface Props extends Loadable, PropsWithChildren {}
 
-export default function Page({children, loading = false}: _Props): ReactElement {
+export default function Page({children, loading = false}: Props): ReactElement {
   return (
     <div className={"relative"}>
       <div className={"absolute left-0 top-0 h-1 w-full"}>
