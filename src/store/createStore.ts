@@ -1,3 +1,4 @@
+import {composeWithDevTools} from "@redux-devtools/extension"
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux"
 import {createStore, applyMiddleware, Dispatch} from "redux"
 import sagaMiddlewareFactory from "redux-saga"
@@ -21,7 +22,10 @@ function configureStore(): ConfiguredStore {
     },
   })
 
-  const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
+  const store = createStore(
+    rootReducer,
+    composeWithDevTools(applyMiddleware(sagaMiddleware)),
+  )
   sagaMiddleware.run(rootSaga)
 
   return {

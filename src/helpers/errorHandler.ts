@@ -3,4 +3,5 @@ export default function errorHandler(err: unknown): void {
   console.warn(err)
 
   // TODO: Log error to some error logging service
+  // TODO: User notification via some kind on toast
 }

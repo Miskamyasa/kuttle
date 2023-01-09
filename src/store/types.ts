@@ -1,19 +1,22 @@
 import {Store} from "redux"
 import {ForkEffect} from "redux-saga/effects"
 
+import {AccountsReducerActions, AccountsReducerState} from "./accounts/types"
 import {CommonReducerActions, CommonReducerState} from "./common/types"
-import {DashboardReducerActions, DashboardReducerState} from "./dashboard/types"
+import {RegionsReducerActions, RegionsReducerState} from "./regions/types"
 
 
 export type SagaGenerator = Generator<ForkEffect<never>, void>
 
 export type Actions =
   | CommonReducerActions
-  | DashboardReducerActions
+  | AccountsReducerActions
+  | RegionsReducerActions
 
 export interface ReducersState {
   common: CommonReducerState
-  dashboard: DashboardReducerState
+  accounts: AccountsReducerState
+  regions: RegionsReducerState
 }
 
 export type AppState = ReducersState

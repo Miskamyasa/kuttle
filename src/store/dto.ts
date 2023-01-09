@@ -69,26 +69,28 @@ export interface Link {
   url?: null
 }
 
-export interface Region {
+export interface Environment {
   name: string
   full_name: string
-  region: string
-  short_region: string
   blueprint: Blueprint
-  services?: (Service)[] | null
-  resources?: (Resource)[] | null
-  variables?: (Variable)[] | null
-  secrets?: (Secret)[] | null
+  services?: Array<Service> | null
+  resources?: Array<Resource> | null
   lifetime: Lifetime
   owners: Owners
-  tests?: (Test)[] | null
+  tests?: Array<Test> | null
   costs: Costs
   logs: Logs
-  links?: (Link)[] | null
+  links?: Array<Link> | null
   comment?: null
+}
+
+export interface Region {
+  region: string
+  short_region: string
+  environments?: Array<Environment> | null
 }
 
 export interface Account {
   account_name: string
-  regions?: (Region)[] | null
+  regions?: Array<Region> | null
 }

@@ -2,110 +2,91 @@
   "account_name": "Development",
   "regions": [
     {
-      "name": "dev1",
-      "full_name": "dev-euw2-dev1",
       "region": "eu-west-2",
       "short_region": "euw2",
-      "blueprint": {
-        "name": "main",
-        "version": 1.4,
-        "location": null
-      },
-      "services": [
+      "environments": [
         {
-          "name": "backend",
-          "version": null,
-          "cpu": 0.25,
-          "memory": 0.5,
-          "git_repo": null,
-          "cicd": {
-            "status": "done",
-            "method": "latest",
-            "version": "1.1.5",
-            "branch": "dev",
-            "path_to_manifest": null
+          "name": "dev1",
+          "full_name": "dev-euw2-dev1",
+          "blueprint": {
+            "name": "main",
+            "version": 1.4,
+            "location": null
           },
-          "public": false
+          "services": [
+            {
+              "name": "backend",
+              "version": null,
+              "cpu": 0.25,
+              "memory": 0.5,
+              "git_repo": null,
+              "cicd": {
+                "status": "done",
+                "method": "latest",
+                "version": "1.1.5",
+                "branch": "dev",
+                "path_to_manifest": null
+              },
+              "public": false
+            }
+          ],
+          "resources": [
+            {
+              "name": "postgre",
+              "type": "sql",
+              "kind": "origin",
+              "status": "healthy"
+            },
+            {
+              "name": "mongo",
+              "type": "nosql",
+              "kind": "origin",
+              "status": "healthy"
+            },
+            {
+              "name": "redis",
+              "type": "cache",
+              "kind": "origin",
+              "status": "healthy"
+            },
+            {
+              "name": "s3",
+              "type": "object",
+              "kind": "managed",
+              "status": "healthy"
+            }
+          ],
+          "lifetime": {
+            "created": 1667313845,
+            "destroy": 1668091445
+          },
+          "owners": {
+            "id": 1,
+            "name": "Denis Zaitsev"
+          },
+          "tests": [
+            {
+              "name": null,
+              "status": null
+            }
+          ],
+          "costs": {
+            "hourly": null,
+            "daily": null,
+            "monthly": null
+          },
+          "logs": {
+            "dest": null,
+            "path": null
+          },
+          "links": [
+            {
+              "url": null
+            }
+          ],
+          "comment": null
         }
-      ],
-      "resources": [
-        {
-          "name": "postgre",
-          "type": "sql",
-          "kind": "origin",
-          "status": "healthy"
-        },
-        {
-          "name": "mongo",
-          "type": "nosql",
-          "kind": "origin",
-          "status": "healthy"
-        },
-        {
-          "name": "redis",
-          "type": "cache",
-          "kind": "origin",
-          "status": "healthy"
-        },
-        {
-          "name": "s3",
-          "type": "object",
-          "kind": "managed",
-          "status": "healthy"
-        }
-      ],
-      "variables": [
-        {
-          "name": "DB_MYSQL_HOST",
-          "value": "db_mysql_host"
-        },
-        {
-          "name": "DB_MYSQL_HOST",
-          "value": 3306
-        }
-      ],
-      "secrets": [
-        {
-          "name": "DB_MYSQL_HOST",
-          "valuefrom": "db_mysql_host_secret"
-        },
-        {
-          "name": "DB_MYSQL_USER",
-          "valueFrom": "db_mysql_user_secret"
-        },
-        {
-          "name": "DB_MYSQL_HOST",
-          "valuefrom": "db_mysql_host"
-        }
-      ],
-      "lifetime": {
-        "created": 1667313845,
-        "destroy": 1668091445
-      },
-      "owners": {
-        "id": 1
-      },
-      "tests": [
-        {
-          "name": null,
-          "status": null
-        }
-      ],
-      "costs": {
-        "hourly": null,
-        "daily": null,
-        "monthly": null
-      },
-      "logs": {
-        "dest": null,
-        "path": null
-      },
-      "links": [
-        {
-          "url": null
-        }
-      ],
-      "comment": null
+      ]
     }
   ]
 }, {

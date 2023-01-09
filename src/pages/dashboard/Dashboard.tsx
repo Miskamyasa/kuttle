@@ -3,16 +3,18 @@ import {ReactElement, useEffect} from "react"
 import Header from "../../components/account/Header"
 import Wrapper from "../../components/account/Wrapper"
 import Page from "../../components/page/Page"
+import Region from "../../components/region/Region"
+import {fetchAccounts} from "../../store/accounts/actions"
+import {selectAccounts} from "../../store/accounts/selectors"
 import {useAppDispatch, useAppSelector} from "../../store/createStore"
-import {fetchDashboard} from "../../store/dashboard/actions"
 
 
 export default function Dashboard(): ReactElement {
   const dispatch = useAppDispatch()
-  const {loading, store, ids} = useAppSelector(state => state.dashboard)
+  const {loading, store, ids} = useAppSelector(selectAccounts)
 
   useEffect(() => {
-    dispatch(fetchDashboard())
+    dispatch(fetchAccounts())
   }, [dispatch])
 
   return (
@@ -20,9 +22,13 @@ export default function Dashboard(): ReactElement {
       {ids.length > 0 ? ids.map(id => ((
         <Wrapper key={id}>
           <Header accountName={store[id].account_name} />
-          <div className={"mt-10"}>
-            {id}
-          </div>
+          {store[id].regions?.map(regionId => (
+            <div
+              key={regionId}
+              className={"mt-10"}>
+              <Region id={regionId} />
+            </div>
+          ))}
         </Wrapper>
       ))) : null /* TODO: Empty page banner */}
     </Page>
