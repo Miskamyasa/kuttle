@@ -3,6 +3,7 @@ import {call, put, select, takeLeading} from "redux-saga/effects"
 
 import mock from "../../../__mocks__/dashboard.json"
 import errorHandler from "../../helpers/errorHandler"
+import {Account} from "../dto"
 import {loadRegions} from "../regions/actions"
 import {getRegionId} from "../regions/helpers"
 import {selectRegions} from "../regions/selectors"
@@ -30,7 +31,7 @@ export function* watchFetchAccounts(): SagaGenerator {
 
       if (Array.isArray(data)) {
         for (const account of data) {
-          const {regions} = account
+          const {regions = []} = account as Account
 
           const name = account.account_name
 

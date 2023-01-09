@@ -41,7 +41,7 @@
               "name": "mongo",
               "type": "nosql",
               "kind": "origin",
-              "status": "healthy"
+              "status": "degraded"
             },
             {
               "name": "redis",
@@ -81,7 +81,7 @@
           },
           "links": [
             {
-              "url": null
+              "url": "//kuttle.io"
             }
           ],
           "comment": null

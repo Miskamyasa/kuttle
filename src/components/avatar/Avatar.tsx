@@ -13,12 +13,12 @@ export default function Avatar({name, imgSrc}: Props): ReactElement {
       src={imgSrc}
       alt={name || "Avatar"} />
   ) : (
-    <span className={"text-xs font-bold text-white"}>
+    <div className={"text-xs font-bold text-white"}>
       {name
         ?.split(" ")
         .map((p) => p.charAt(0).toUpperCase())
         .join("")}
-    </span>
+    </div>
   )
 
   return (

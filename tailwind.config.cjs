@@ -4,14 +4,30 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    "fill-green",
+    "fill-gray2",
+    "fill-red",
+    "fill-yellow",
+    "fill-blue1",
+    "fill-blueDark",
+    "bg-green",
+    "bg-gray2",
+    "bg-red",
+    "bg-yellow",
+  ],
   theme: {
     extend: {
       colors: {
+        blue1: "#2D9CDB",
         blueDark: "#02163D",
         pink: "#FF00A1",
         gray1: "#828282",
         gray2: "#BDBDBD",
         gray3: "#F4F2F3",
+        green: "#57BB80",
+        yellow: "#FFAC30",
+        red: "#EE5353",
       },
       keyframes: {
         infiniteBar: {

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import {ReactElement} from "react"
 
 
@@ -17,8 +18,7 @@ export default function Info({fill = "#000", size = 33}: Props): ReactElement {
       <path
         fill={fill}
         fillRule="evenodd"
-        d="M16.5 5.437c-6.075 0-11 4.924-11 11 0 6.075 4.925 11 11 11s11-4.925 11-11c0-6.076-4.925-11-11-11Zm-13
-        11c0-7.18 5.82-13 13-13s13 5.82 13 13-5.82 13-13 13-13-5.82-13-13Z"
+        d="M16.5 5.437c-6.075 0-11 4.924-11 11 0 6.075 4.925 11 11 11s11-4.925 11-11c0-6.076-4.925-11-11-11Zm-13 11c0-7.18 5.82-13 13-13s13 5.82 13 13-5.82 13-13 13-13-5.82-13-13Z"
         clipRule="evenodd" />
       <path
         fill={fill}

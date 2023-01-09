@@ -5,7 +5,7 @@ export interface Blueprint {
 }
 
 export interface Cicd {
-  status: string
+  status: "done" | "inflight" | "unknown" | "fail"
   method: string
   version: string
   branch: string
@@ -24,9 +24,9 @@ export interface Service {
 
 export interface Resource {
   name: string
-  type: string
+  type: "sql" | "nosql" | "cache" | "object"
   kind: string
-  status: string
+  status: "healthy" | "degraded" | "outage" | "unknown"
 }
 
 export interface Variable {
@@ -47,6 +47,7 @@ export interface Lifetime {
 
 export interface Owners {
   id: number
+  name: string
 }
 
 export interface Test {

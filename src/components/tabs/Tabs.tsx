@@ -14,7 +14,7 @@ export default function Tabs(): ReactElement {
             <NavLink
               key={route.path}
               to={route.path}>
-              <span>{route.title}</span>
+              <div>{route.title}</div>
             </NavLink>
           )
         }

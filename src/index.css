@@ -8,6 +8,7 @@
 
 body {
   font-family: Inter, sans-serif;
+  @apply text-blueDark;
 }
 
 @layer components {
@@ -19,7 +20,7 @@ body {
     @apply relative h-full flex justify-center items-center px-6;
   }
 
-  .kuttle-tabs a > span {
+  .kuttle-tabs a > div {
     @apply font-bold text-sm text-gray1 transition-colors;
   }
 
@@ -37,4 +38,12 @@ body {
     @apply opacity-100;
   }
 
+  .kuttle-account-table {
+    @apply min-w-full
+  }
+
+  .kuttle-account-table th,
+  .kuttle-account-table td {
+    @apply border border-gray3
+  }
 }
