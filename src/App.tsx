@@ -16,6 +16,7 @@ dayjs.extend(relativeTime)
 
 const element = document.getElementById("root")
 
+
 if (element) {
   ReactDOM.createRoot(element).render(
     <React.StrictMode>

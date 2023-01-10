@@ -1,6 +1,7 @@
-import {Fragment, ReactElement} from "react"
+import {Fragment, ReactElement, useCallback} from "react"
 
 import dayjs from "dayjs"
+import {Link} from "react-router-dom"
 
 import {useAppSelector} from "../../store/createStore"
 import {Cicd, Owners, Resource} from "../../store/dto"
@@ -9,7 +10,7 @@ import {EnvironmentId} from "../../store/environments/types"
 import Bucket from "../icons/Bucket"
 import Cache from "../icons/Cache"
 import Grafana from "../icons/Grafana"
-import Link from "../icons/Link"
+import LinkIcon from "../icons/Link"
 import NoSQL from "../icons/NoSQL"
 import SQL from "../icons/SQL"
 
@@ -62,6 +63,10 @@ export default function EnvironmentRow({id}: Props): ReactElement {
   const store = useAppSelector(selectEnvironmentsStore)
   const data = store[id]
 
+  const handleClick = useCallback(() => {
+    // show env modal
+  }, [])
+
   if (!data) {
     return (
       <tr>
@@ -71,12 +76,14 @@ export default function EnvironmentRow({id}: Props): ReactElement {
   }
 
   return (
-    <tr>
+    <tr onClick={handleClick}>
       <Td>
-        <div className={"flex flex-col"}>
+        <Link
+          to={"?modal=environment&id=" + data.full_name}
+          className={"flex flex-col"}>
           <div>{data.name}</div>
           <div className={"text-gray2 text-xs mt-0.5"}>{data.full_name}</div>
-        </div>
+        </Link>
       </Td>
       <Td>
         <div>{data.blueprint.name}</div>
@@ -90,6 +97,7 @@ export default function EnvironmentRow({id}: Props): ReactElement {
           {data.services?.map(item => (
             <div
               key={item.name}
+              title={item.name}
               className={`mx-2 w-[15px] h-[15px] rounded-full bg-${getColor(item.cicd.status)}`} />
           ))}
         </div>
@@ -140,7 +148,7 @@ export default function EnvironmentRow({id}: Props): ReactElement {
             href={data.links[0].url}
             target={"_blank"}
             rel="noreferrer">
-            <Link className={"stroke-blueDark"} />
+            <LinkIcon className={"stroke-blueDark"} />
           </a>
         ) : null}
       </Td>

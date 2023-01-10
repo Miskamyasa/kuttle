@@ -1,5 +1,8 @@
+import {ReactNode} from "react"
+
+
 export interface CommonReducerState {
-  some: number
+  content: ReactNode
   // TODO: change to anything!
 }
 
