@@ -8,8 +8,6 @@ import Logo from "../logo/Logo"
 import Modal from "../Modal/Modal"
 import Tabs from "../tabs/Tabs"
 
-import {pageHeightClassName} from "./helpers"
-
 
 export default function Layout(): ReactElement {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -38,7 +36,7 @@ export default function Layout(): ReactElement {
         </div>
       </div>
       {/* 64px in calc function is h-16 for header */}
-      <div className={`max-w-full bg-gray3 ${pageHeightClassName}`}>
+      <div className={"w-full bg-gray3"}>
         <Outlet />
       </div>
       <Modal />
