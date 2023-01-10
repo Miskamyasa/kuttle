@@ -89,7 +89,8 @@ export default function EnvironmentRow({data}: Props): ReactElement {
           {data.resources?.map(item => (
             <div
               key={item.name}
-              className={"flex items-center justify-center mr-4"}>
+              className={"flex items-center justify-center mr-3"}
+              title={item.name}>
               {getResourceIconElement(item)}
             </div>
           ))}
@@ -97,7 +98,9 @@ export default function EnvironmentRow({data}: Props): ReactElement {
       </Td>
       <Td>
         <div className={"text-center"}>
-          <div className={"text-xs"}>{dayjs(data.lifetime.created * 1000).fromNow()}</div>
+          <div className={"text-xs"}>
+            {dayjs(data.lifetime.created * 1000).fromNow()}
+          </div>
         </div>
       </Td>
       <Td>Test</Td>
@@ -110,8 +113,12 @@ export default function EnvironmentRow({data}: Props): ReactElement {
         <div className={"flex flex-col text-xs"}>
           {data.costs.hourly ? (
             <Fragment>
-              <div>${(data.costs.hourly) * 24} / day</div>
-              <div className={"text-gray2"}>${(data.costs.hourly) * 24 * 30} / day</div>
+              <div>
+                {`$${Number((data.costs.hourly) * 24).toFixed(2)} / day`}
+              </div>
+              <div className={"text-gray2"}>
+                {`$${Number((data.costs.hourly) * 24 * 30).toFixed(2)} / month`}
+              </div>
             </Fragment>
           ) : "Unknown"}
         </div>

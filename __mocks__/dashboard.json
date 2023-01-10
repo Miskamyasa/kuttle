@@ -71,7 +71,7 @@
             }
           ],
           "costs": {
-            "hourly": null,
+            "hourly": 0.04,
             "daily": null,
             "monthly": null
           },

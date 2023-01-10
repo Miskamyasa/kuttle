@@ -7,11 +7,11 @@ interface Account extends Omit<AccountDTO, "regions"> {
   regions: string[]
 }
 
-type ID = Account["account_name"]
+export type AccountId = Account["account_name"]
 
 export interface AccountsReducerState extends Loadable {
-  store: Record<ID, Account>
-  ids: Array<ID>
+  store: Record<AccountId, Account>
+  ids: Array<AccountId>
 }
 
 export interface FetchAccountsAction {
