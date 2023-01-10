@@ -1,5 +1,6 @@
 export interface CommonReducerState {
   some: number
+  // TODO: change to anything!
 }
 
 export interface ResetAction {

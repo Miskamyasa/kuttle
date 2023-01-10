@@ -2,9 +2,9 @@ import {Fragment, ReactElement} from "react"
 
 import {selectAccounts} from "../../store/accounts/selectors"
 import {useAppSelector} from "../../store/createStore"
+import Regions from "../regions/Regions"
 
 import Header from "./Header"
-import Regions from "./Regions"
 import Wrapper from "./Wrapper"
 
 

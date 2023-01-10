@@ -1,10 +1,12 @@
 import {AppState} from "../types"
 
+import {RegionsReducerState} from "./types"
 
-export function selectRegions(state: AppState): AppState["regions"] {
+
+export function selectRegions(state: AppState): RegionsReducerState {
   return state.regions
 }
 
-export function selectRegionsStore(state: AppState): AppState["regions"]["store"] {
+export function selectRegionsStore(state: AppState): RegionsReducerState["store"] {
   return state.regions.store
 }

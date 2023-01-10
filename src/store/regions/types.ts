@@ -1,13 +1,16 @@
 import {Loadable} from "../../helpers/types"
 import {ResetAction} from "../common/types"
-import {Region} from "../dto"
+import {Region as RegionDTO} from "../dto"
 
 
-export type RegionID = string
+interface Region extends Omit<RegionDTO, "environments"> {
+  environments: string[]
+}
+
+export type RegionId = string
 
 export interface RegionsReducerState extends Loadable {
-  store: Record<RegionID, Region>
-  ids: Array<RegionID>
+  store: Record<RegionId, Region>
 }
 
 export interface FetchRegionsAction {

@@ -4,10 +4,12 @@ import {call, put, select, takeLeading} from "redux-saga/effects"
 import mock from "../../../__mocks__/dashboard.json"
 import errorHandler from "../../helpers/errorHandler"
 import {Account} from "../dto"
+import {selectEnvironmentsStore} from "../environments/selectors"
+import {EnvironmentId, EnvironmentsReducerState} from "../environments/types"
 import {loadRegions} from "../regions/actions"
 import {getRegionId} from "../regions/helpers"
-import {selectRegions} from "../regions/selectors"
-import {RegionID} from "../regions/types"
+import {selectRegionsStore} from "../regions/selectors"
+import {RegionId, RegionsReducerState} from "../regions/types"
 import {AppState, SagaGenerator} from "../types"
 
 import {failFetchAccounts, loadAccounts} from "./actions"
@@ -21,49 +23,60 @@ export function* watchFetchAccounts(): SagaGenerator {
       const data = mock
       yield call(delay, 100)
 
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      const accountsState: AppState["accounts"] = yield select(selectAccounts)
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      const regionsState: AppState["regions"] = yield select(selectRegions)
-
-      const accountsIds = new Set(accountsState.ids)
-      const regionsIds = new Set(regionsState.ids)
-
       if (Array.isArray(data)) {
-        for (const account of data) {
-          const {regions = []} = account as Account
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        const accountsState: AppState["accounts"] = yield select(selectAccounts)
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        const regionsStore: RegionsReducerState["store"] = yield select(selectRegionsStore)
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        const envStore: EnvironmentsReducerState["store"] = yield select(selectEnvironmentsStore)
 
-          const name = account.account_name
+        const accountsIds = new Set(accountsState.ids)
+        for (const accountData of data) {
+          const {regions, ...account} = accountData as Account
 
-          const ids: RegionID[] = []
+          const accountName = account.account_name
+
+          const ids: RegionId[] = []
 
           if (Array.isArray(regions) && regions.length > 0) {
-            for (const region of regions) {
-              const id = getRegionId(account.account_name, region.short_region)
-              regionsState.store[id] = region
-              regionsIds.add(id)
-              ids.push(id)
+            for (const regionData of regions) {
+              const regionId = getRegionId(accountName, regionData.short_region)
+              const {environments, ...region} = regionData
+
+              const envIds: EnvironmentId[] = []
+              if (Array.isArray(environments)) {
+                for (const envData of environments) {
+                  const {full_name: envId} = envData
+                  envStore[envId] = envData
+                  envIds.push(envId)
+                }
+              }
+
+              regionsStore[regionId] = {
+                ...region,
+                environments: envIds,
+              }
+              ids.push(regionId)
             }
           }
 
-          accountsState.store[name] = {
+          accountsState.store[accountName] = {
             ...account,
             regions: ids,
           }
-          accountsIds.add(name)
+          accountsIds.add(accountName)
         }
+
+        yield put(loadAccounts({
+          store: accountsState.store,
+          ids: Array.from(accountsIds),
+        }))
+
+        yield put(loadRegions({
+          store: regionsStore,
+        }))
       }
-
-      yield put(loadAccounts({
-        store: accountsState.store,
-        ids: Array.from(accountsIds),
-      }))
-
-      yield put(loadRegions({
-        store: regionsState.store,
-        ids: Array.from(regionsIds),
-      }))
-
     } catch (e) {
       errorHandler(e)
       yield put(failFetchAccounts())

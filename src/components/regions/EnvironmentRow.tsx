@@ -1,8 +1,11 @@
-import {Fragment, PropsWithChildren, ReactElement} from "react"
+import {Fragment, ReactElement} from "react"
 
 import dayjs from "dayjs"
 
-import {Cicd, Environment, Owners, Resource} from "../../store/dto"
+import {useAppSelector} from "../../store/createStore"
+import {Cicd, Owners, Resource} from "../../store/dto"
+import {selectEnvironmentsStore} from "../../store/environments/selectors"
+import {EnvironmentId} from "../../store/environments/types"
 import Bucket from "../icons/Bucket"
 import Cache from "../icons/Cache"
 import Grafana from "../icons/Grafana"
@@ -10,12 +13,8 @@ import Link from "../icons/Link"
 import NoSQL from "../icons/NoSQL"
 import SQL from "../icons/SQL"
 
+import Td from "./Td"
 
-function Td({children}: PropsWithChildren): ReactElement {
-  return (
-    <td className={"p-3 border border-gray3 text-base"}>{children}</td>
-  )
-}
 
 function getColor(state: Resource["status"] | Cicd["status"]): string {
   switch (state) {
@@ -55,11 +54,22 @@ function getOwnerName(owner: Owners): string {
 }
 
 interface Props {
-  data: Environment
+  id: EnvironmentId
 }
 
 
-export default function EnvironmentRow({data}: Props): ReactElement {
+export default function EnvironmentRow({id}: Props): ReactElement {
+  const store = useAppSelector(selectEnvironmentsStore)
+  const data = store[id]
+
+  if (!data) {
+    return (
+      <tr>
+        <td colSpan={11}>Empty</td>
+      </tr>
+    )
+  }
+
   return (
     <tr>
       <Td>

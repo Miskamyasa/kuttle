@@ -1,22 +1,16 @@
-import {PropsWithChildren, ReactElement} from "react"
+import {ReactElement} from "react"
 
 import {useAppSelector} from "../../store/createStore"
 import {selectRegionsStore} from "../../store/regions/selectors"
-import {RegionID} from "../../store/regions/types"
+import {RegionId} from "../../store/regions/types"
 
 import EnvironmentRow from "./EnvironmentRow"
+import Th from "./Th"
 
 
 interface Props {
-  id: RegionID
+  id: RegionId
 }
-
-function Th({children}: PropsWithChildren): ReactElement {
-  return (
-    <th className={"p-3 border border-gray3 text-xs font-normal"}>{children}</th>
-  )
-}
-
 
 export default function RegionTable({id}: Props): ReactElement {
   const store = useAppSelector(selectRegionsStore)
@@ -47,11 +41,15 @@ export default function RegionTable({id}: Props): ReactElement {
         </tr>
       </thead>
       <tbody>
-        {Array.isArray(environments) && environments.map(item => (
+        {Array.isArray(environments) ? environments.map(envId => (
           <EnvironmentRow
-            data={item}
-            key={item.full_name} />
-        ))}
+            id={envId}
+            key={envId} />
+        )) : (
+          <tr>
+            <td colSpan={11}>Empty</td>
+          </tr>
+        )}
       </tbody>
     </table>
   )

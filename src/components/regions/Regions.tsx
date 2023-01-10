@@ -14,9 +14,17 @@ interface Props {
 export default function Regions({accountId}: Props): ReactElement {
   const store = useAppSelector(selectAccountsStore)
 
+  const {regions} = store[accountId]
+
+  if (!regions || regions.length < 1) {
+    return (
+      <div className={"mt-10"}>Empty</div>
+    )
+  }
+
   return (
     <Fragment>
-      {store[accountId].regions?.map(regionId => (
+      {regions.map(regionId => (
         <div
           key={regionId}
           className={"mt-10"}>

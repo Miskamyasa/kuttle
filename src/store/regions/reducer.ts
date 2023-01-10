@@ -5,7 +5,6 @@ function resetRegionsState(): RegionsReducerState {
   return {
     loading: false,
     store: {},
-    ids: [],
   }
 }
 
