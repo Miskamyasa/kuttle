@@ -6,7 +6,6 @@ import errorHandler from "../../helpers/errorHandler"
 import {Account} from "../dto"
 import {selectEnvironmentsStore} from "../environments/selectors"
 import {EnvironmentId, EnvironmentsReducerState} from "../environments/types"
-import {loadRegions} from "../regions/actions"
 import {getRegionId} from "../regions/helpers"
 import {selectRegionsStore} from "../regions/selectors"
 import {RegionId, RegionsReducerState} from "../regions/types"
@@ -71,10 +70,6 @@ export function* watchFetchAccounts(): SagaGenerator {
         yield put(loadAccounts({
           store: accountsState.store,
           ids: Array.from(accountsIds),
-        }))
-
-        yield put(loadRegions({
-          store: regionsStore,
         }))
       }
     } catch (e) {

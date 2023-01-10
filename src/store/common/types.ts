@@ -1,9 +1,5 @@
-import {ReactNode} from "react"
-
-
 export interface CommonReducerState {
-  content: ReactNode
-  // TODO: change to anything!
+  ready: boolean
 }
 
 export interface ResetAction {

@@ -12,6 +12,7 @@ export default function Tabs(): ReactElement {
         if (route.path !== "*") {
           return (
             <NavLink
+              className={"mr-4"}
               key={route.path}
               to={route.path}>
               <div>{route.title}</div>

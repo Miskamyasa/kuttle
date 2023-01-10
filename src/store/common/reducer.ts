@@ -3,7 +3,7 @@ import {CommonReducerActions, CommonReducerState} from "./types"
 
 function resetCommonState(): CommonReducerState {
   return {
-    content: null,
+    ready: false,
   }
 }
 
