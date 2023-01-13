@@ -1,7 +1,7 @@
+import axios from "axios"
 import delay from "delay"
 import {call, put, select, takeLeading} from "redux-saga/effects"
 
-import mock from "../../../__mocks__/dashboard.json"
 import errorHandler from "../../helpers/errorHandler"
 import {Account} from "../dto"
 import {selectEnvironmentsStore} from "../environments/selectors"
@@ -18,8 +18,9 @@ import {selectAccounts} from "./selectors"
 export function* watchFetchAccounts(): SagaGenerator {
   yield takeLeading("FetchAccounts", function* fetchAccountsEffect() {
     try {
-      // FIXME: переделать на бекенд реализацию
-      const data = mock
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      const {data}: {data: Account[]} = yield call(axios, "/api/dashboard")
+
       yield call(delay, 100)
 
       if (Array.isArray(data)) {
@@ -32,7 +33,7 @@ export function* watchFetchAccounts(): SagaGenerator {
 
         const accountsIds = new Set(accountsState.ids)
         for (const accountData of data) {
-          const {regions, ...account} = accountData as Account
+          const {regions, ...account} = accountData
 
           const accountName = account.account_name
 

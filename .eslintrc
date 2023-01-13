@@ -4,13 +4,21 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "ignorePatterns": [],
+  "ignorePatterns": [
+    "dist/**/*"
+  ],
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:react/recommended"
   ],
-  "plugins": ["react", "react-hooks", "import"],
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "import"
+  ],
   "settings": {
     "react": {
       "version": "detect"
@@ -18,7 +26,6 @@
   },
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "error",
-    // переопределяется в "@typescript-eslint/semi"
     "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/member-delimiter-style": [
       "error", {
@@ -51,7 +58,6 @@
       }
     ],
     "indent": ["error", 2, {"SwitchCase": 1}],
-    "jsx-quotes": ["error", "prefer-double"],
     "linebreak-style": ["error", "unix"],
     "max-len": ["warn", {"code": 120}],
     "no-console": "warn",
@@ -61,44 +67,51 @@
     "object-curly-spacing": ["error", "never"],
     "operator-linebreak": ["error", "before"],
     "quotes": ["error", "double", {"avoidEscape": true}],
-    "react-hooks/exhaustive-deps": "error",
-    "react/jsx-closing-bracket-location": ["error", {"nonEmpty": "after-props", "selfClosing": "after-props"}],
-    "react/jsx-curly-spacing": [2, {"when": "never", "attributes": {"allowMultiline": false}, "children": true}],
-    "react/jsx-first-prop-new-line": ["error", "multiline"],
-    "react/jsx-fragments": ["error", "element"],
-    "react/jsx-max-props-per-line": ["error", {"maximum": 1}],
-    "react/jsx-tag-spacing": [
-      "error",
-      {"closingSlash": "never", "beforeSelfClosing": "always", "afterOpening": "never", "beforeClosing": "allow"}
-    ],
-    "react/jsx-wrap-multilines": [
-      "error",
-      {
-        "declaration": "parens",
-        "assignment": "parens",
-        "return": "parens",
-        "arrow": "parens",
-        "condition": "ignore",
-        "logical": "ignore",
-        "prop": "ignore"
-      }
-    ],
-    "react/react-in-jsx-scope": "off",
     "semi": "off"
   },
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx"],
-      "excludedFiles": ["*.spec.js"],
-      "extends": ["plugin:@typescript-eslint/recommended-requiring-type-checking"],
-      "plugins": ["@typescript-eslint"]
-    },
-    {
-      "files": ["*.spec.js"],
-      "globals": {"jsdom": "readonly"},
-      "plugins": [],
-      "extends": [],
-      "rules": {}
+      "files": [
+        "frontend/**/*.ts",
+        "frontend/**/*.tsx"
+      ],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:react/recommended"
+      ],
+      "plugins": [
+        "@typescript-eslint",
+        "react",
+        "react-hooks",
+        "import"
+      ],
+      "rules": {
+        "react-hooks/exhaustive-deps": "error",
+        "react/jsx-closing-bracket-location": ["error", {"nonEmpty": "after-props", "selfClosing": "after-props"}],
+        "react/jsx-curly-spacing": [2, {"when": "never", "attributes": {"allowMultiline": false}, "children": true}],
+        "react/jsx-first-prop-new-line": ["error", "multiline"],
+        "react/jsx-fragments": ["error", "element"],
+        "react/jsx-max-props-per-line": ["error", {"maximum": 1}],
+        "react/jsx-tag-spacing": [
+          "error",
+          {"closingSlash": "never", "beforeSelfClosing": "always", "afterOpening": "never", "beforeClosing": "allow"}
+        ],
+        "react/jsx-wrap-multilines": [
+          "error",
+          {
+            "declaration": "parens",
+            "assignment": "parens",
+            "return": "parens",
+            "arrow": "parens",
+            "condition": "ignore",
+            "logical": "ignore",
+            "prop": "ignore"
+          }
+        ],
+        "react/react-in-jsx-scope": "off"
+      }
     }
   ]
 }

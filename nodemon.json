@@ -1,0 +1,11 @@
+{
+  "watch": [
+    "backend"
+  ],
+  "ext": "ts",
+  "ignore": [
+    "dist",
+    "frontend"
+  ],
+  "exec": "ts-node --files -r tsconfig-paths/register ./backend"
+}
