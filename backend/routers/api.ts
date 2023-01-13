@@ -1,10 +1,12 @@
-import express from "express"
+import {Router} from "express"
+
+import dashboardJson from "../../__mocks__/dashboard.json"
 
 
-const apiRouter = express.Router()
+const apiRouter = Router()
 
 apiRouter.get("/api/dashboard", (req, res) => {
-  res.json([])
+  res.json(dashboardJson)
 })
 
 export default apiRouter
