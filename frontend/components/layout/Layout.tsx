@@ -1,4 +1,4 @@
-import React, {Fragment, ReactElement} from "react"
+import React, {ReactElement} from "react"
 
 import {Outlet, useSearchParams} from "react-router-dom"
 
@@ -21,7 +21,7 @@ export default function Layout(): ReactElement {
   })
 
   return (
-    <Fragment>
+    <div className={"flex flex-col min-h-screen"}>
       <div className={"bg-blueDark flex items-center h-16 px-10"}>
         <div className={"mr-12"}>
           <Logo />
@@ -36,10 +36,10 @@ export default function Layout(): ReactElement {
         </div>
       </div>
       {/* 64px in calc function is h-16 for header */}
-      <div className={"w-full bg-gray3"}>
+      <div className={"w-full bg-gray3 flex-grow"}>
         <Outlet />
       </div>
       <Modal />
-    </Fragment>
+    </div>
   )
 }

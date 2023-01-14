@@ -11,7 +11,7 @@ function resetBlueprintsState(): BlueprintsReducerState {
 
 const initialState = resetBlueprintsState()
 
-export default function blueprintsReducer(
+function blueprintsReducer(
   state: BlueprintsReducerState = initialState,
   action: BlueprintsReducerActions
 ): BlueprintsReducerState {
@@ -43,3 +43,5 @@ export default function blueprintsReducer(
       return state
   }
 }
+
+export default blueprintsReducer

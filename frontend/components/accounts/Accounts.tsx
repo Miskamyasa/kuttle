@@ -13,12 +13,12 @@ export default function Accounts(): ReactElement {
 
   return (
     <Fragment>
-      {ids.length > 0 ? ids.map(id => ((
+      {ids.map(id => (
         <Wrapper key={id}>
           <Header accountId={id} />
           <Regions accountId={id} />
         </Wrapper>
-      ))) : null /* TODO: Empty page banner */}
+      ))}
     </Fragment>
   )
 }
