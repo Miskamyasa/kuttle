@@ -41,7 +41,7 @@ export default function RegionTable({id}: Props): ReactElement {
         </tr>
       </thead>
       <tbody>
-        {environments.map(envId => (
+        {environments.map((envId) => (
           <EnvironmentRow
             id={envId}
             key={envId} />

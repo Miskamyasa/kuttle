@@ -8,7 +8,7 @@ import {pages} from "../../Navigation/router"
 export default function Tabs(): ReactElement {
   return (
     <div className={"h-full kuttle-tabs flex items-center"}>
-      {pages.map(function linkMapper(route) {
+      {pages.map((route) => {
         if (route.path !== "*") {
           return (
             <NavLink

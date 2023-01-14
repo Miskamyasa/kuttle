@@ -1,10 +1,11 @@
 import {Loadable} from "../../helpers/types"
 import {ResetAction} from "../common/types"
 import {Account as AccountDTO} from "../dto"
+import {RegionId} from "../regions/types"
 
 
 interface Account extends Omit<AccountDTO, "regions"> {
-  regions: string[]
+  regions: RegionId[]
 }
 
 export type AccountId = Account["account_name"]

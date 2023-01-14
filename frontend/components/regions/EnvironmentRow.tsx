@@ -95,7 +95,7 @@ export default function EnvironmentRow({id}: Props): ReactElement {
         {data.services && (
           <div className={"flex items-center"}>
             <div>{data.services.length}</div>
-            {data.services.map(item => (
+            {data.services.map((item) => (
               <div
                 key={item.name}
                 title={item.name}
@@ -107,7 +107,7 @@ export default function EnvironmentRow({id}: Props): ReactElement {
       <Td>
         {data.resources && (
           <div className={"flex items-center justify-start"}>
-            {data.resources.map(item => (
+            {data.resources.map((item) => (
               <div
                 key={item.name}
                 className={"flex items-center justify-center mr-3"}

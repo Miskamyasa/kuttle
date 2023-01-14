@@ -24,7 +24,7 @@ export default function Regions({accountId}: Props): ReactElement {
 
   return (
     <Fragment>
-      {regions.map(regionId => (
+      {regions.map((regionId) => (
         <div
           key={regionId}
           className={"mt-10"}>

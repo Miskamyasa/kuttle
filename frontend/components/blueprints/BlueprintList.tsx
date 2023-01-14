@@ -9,7 +9,7 @@ export default function BlueprintList(): ReactElement {
 
   return (
     <Fragment>
-      {ids.map(id => (
+      {ids.map((id) => (
         <div key={id}>
           {id}
         </div>

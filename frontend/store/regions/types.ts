@@ -1,10 +1,11 @@
 import {Loadable} from "../../helpers/types"
 import {ResetAction} from "../common/types"
 import {Region as RegionDTO} from "../dto"
+import {EnvironmentId} from "../environments/types"
 
 
 interface Region extends Omit<RegionDTO, "environments"> {
-  environments: string[]
+  environments: EnvironmentId[]
 }
 
 export type RegionId = string
