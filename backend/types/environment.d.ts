@@ -8,6 +8,14 @@ declare global {
       JET_LOGGER_FILEPATH: string
       JET_LOGGER_TIMESTAMP: boolean
       JET_LOGGER_FORMAT: "LINE"
+
+      COOKIE_DOMAIN: string
+      COOKIE_PATH: string
+      COOKIE_SECRET: string
+      COOKIE_KEY: string
+      COOKIE_EXP: number
+      SECURE_COOKIE: boolean
+      JWT_SECRET: string
     }
   }
 }

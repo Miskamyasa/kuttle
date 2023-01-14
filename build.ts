@@ -5,7 +5,6 @@
 import childProcess from "child_process"
 
 import fs from "fs-extra"
-import logger from "jet-logger"
 
 
 /**
@@ -37,10 +36,10 @@ function exec(cmd: string, loc: string): Promise<void> {
   return new Promise((res, rej) => {
     return childProcess.exec(cmd, {cwd: loc}, (err, stdout, stderr) => {
       if (!!stdout) {
-        logger.info(stdout)
+        console.error(stdout)
       }
       if (!!stderr) {
-        logger.warn(stderr)
+        console.warn(stderr)
       }
       return (!!err ? rej(err) : res())
     })
@@ -61,6 +60,6 @@ void (async (): Promise<void> => {
     // Copy back-end files
     await exec("tsc --build tsconfig.prod.json", ".")
   } catch (err) {
-    logger.err(err)
+    console.error(err)
   }
 })()

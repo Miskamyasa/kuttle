@@ -1,9 +1,8 @@
 import {NextFunction, Request, Response} from "express"
-import logger from "jet-logger"
 
 
 export default function showError(error: Error, req: Request, res: Response, next: NextFunction): void {
-  logger.err(error.message)
+  console.error(error.message)
 
   if (res.headersSent) {
     return next(error)
@@ -15,5 +14,5 @@ export default function showError(error: Error, req: Request, res: Response, nex
   }
 
   res.status(500)
-  res.json(error)
+  res.send(error.message)
 }

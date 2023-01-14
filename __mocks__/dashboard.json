@@ -62,7 +62,7 @@
           },
           "owners": {
             "id": 1,
-            "name": "Denis Zaitsev"
+            "name": "Kuttle"
           },
           "tests": [
             {
@@ -71,9 +71,7 @@
             }
           ],
           "costs": {
-            "hourly": 0.04,
-            "daily": null,
-            "monthly": null
+            "hourly": 0.04
           },
           "logs": {
             "dest": null,
@@ -81,7 +79,7 @@
           },
           "links": [
             {
-              "url": "//kuttle.io"
+              "url": "https://kuttle.io"
             }
           ],
           "comment": null
