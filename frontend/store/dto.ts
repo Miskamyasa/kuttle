@@ -29,17 +29,6 @@ export interface Resource {
   status: "healthy" | "degraded" | "outage" | "unknown"
 }
 
-export interface Variable {
-  name: string
-  value: string | number
-}
-
-export interface Secret {
-  name: string
-  valuefrom?: string | null
-  valueFrom?: string | null
-}
-
 export interface Lifetime {
   created: number
   destroy: number
@@ -51,23 +40,21 @@ export interface Owners {
 }
 
 export interface Test {
-  name?: null
-  status?: null
+  name: null
+  status: null
 }
 
 export interface Costs {
-  hourly?: null
-  daily?: null
-  monthly?: null
+  hourly: number
 }
 
 export interface Logs {
-  dest?: null
-  path?: null
+  dest?: string
+  path?: string
 }
 
 export interface Link {
-  url?: null
+  url: string
 }
 
 export interface Environment {
@@ -80,7 +67,7 @@ export interface Environment {
   owners: Owners
   tests?: Array<Test> | null
   costs: Costs
-  logs: Logs
+  logs?: Logs | null
   links?: Array<Link> | null
   comment?: null
 }
