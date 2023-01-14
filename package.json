@@ -16,7 +16,7 @@
   },
   "engines": {
     "yarn": ">= 1.22",
-    "node": ">=16.10.0"
+    "node": ">=16.10.0 <17"
   },
   "dependencies": {
     "@redux-devtools/extension": "3.2.3",
