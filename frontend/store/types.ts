@@ -2,7 +2,7 @@ import {Store} from "redux"
 import {ForkEffect} from "redux-saga/effects"
 
 import {AccountsReducerActions, AccountsReducerState} from "./accounts/types"
-import {BlueprintsReducerState} from "./blueprints/types"
+import {BlueprintsReducerActions, BlueprintsReducerState} from "./blueprints/types"
 import {CommonReducerActions, CommonReducerState} from "./common/types"
 import {EnvironmentsReducerActions, EnvironmentsReducerState} from "./environments/types"
 import {RegionsReducerActions, RegionsReducerState} from "./regions/types"
@@ -15,8 +15,9 @@ export type Actions =
   | AccountsReducerActions
   | RegionsReducerActions
   | EnvironmentsReducerActions
+  | BlueprintsReducerActions
 
-export interface ReducersState {
+export interface AppState {
   common: CommonReducerState
   accounts: AccountsReducerState
   regions: RegionsReducerState
@@ -24,8 +25,6 @@ export interface ReducersState {
   blueprints: BlueprintsReducerState
 }
 
-export type AppState = ReducersState
-
 export interface ConfiguredStore {
-  store: Store<ReducersState, Actions>
+  store: Store<AppState, Actions>
 }

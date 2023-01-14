@@ -50,7 +50,7 @@ function getResourceIconElement(resource: Resource): ReactElement | null {
 }
 
 function getOwnerName(owner: Owners): string {
-  const [fname, sname] = owner.name.split(" ")
+  const [fname = "X", sname = ""] = owner.name.split(" ")
   return fname.charAt(0).toUpperCase() + sname.charAt(0).toUpperCase()
 }
 
@@ -92,27 +92,31 @@ export default function EnvironmentRow({id}: Props): ReactElement {
         <div className={"text-center"}>{data.blueprint.version}</div>
       </Td>
       <Td>
-        <div className={"flex items-center"}>
-          <div>{data.services?.length}</div>
-          {data.services?.map(item => (
-            <div
-              key={item.name}
-              title={item.name}
-              className={`mx-2 w-[15px] h-[15px] rounded-full bg-${getColor(item.cicd.status)}`} />
-          ))}
-        </div>
+        {data.services && (
+          <div className={"flex items-center"}>
+            <div>{data.services.length}</div>
+            {data.services.map(item => (
+              <div
+                key={item.name}
+                title={item.name}
+                className={`mx-2 w-[15px] h-[15px] rounded-full bg-${getColor(item.cicd.status)}`} />
+            ))}
+          </div>
+        )}
       </Td>
       <Td>
-        <div className={"flex items-center justify-start"}>
-          {data.resources?.map(item => (
-            <div
-              key={item.name}
-              className={"flex items-center justify-center mr-3"}
-              title={item.name}>
-              {getResourceIconElement(item)}
-            </div>
-          ))}
-        </div>
+        {data.resources && (
+          <div className={"flex items-center justify-start"}>
+            {data.resources.map(item => (
+              <div
+                key={item.name}
+                className={"flex items-center justify-center mr-3"}
+                title={item.name}>
+                {getResourceIconElement(item)}
+              </div>
+            ))}
+          </div>
+        )}
       </Td>
       <Td>
         <div className={"text-center"}>

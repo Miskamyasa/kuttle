@@ -1,29 +1,26 @@
 import axios from "axios"
-import delay from "delay"
 import {call, put, select, takeLeading} from "redux-saga/effects"
 
 import errorHandler from "../../helpers/errorHandler"
 import {Account} from "../dto"
 import {selectEnvironmentsStore} from "../environments/selectors"
 import {EnvironmentId, EnvironmentsReducerState} from "../environments/types"
-import {getRegionId} from "../regions/helpers"
 import {selectRegionsStore} from "../regions/selectors"
 import {RegionId, RegionsReducerState} from "../regions/types"
 import {AppState, SagaGenerator} from "../types"
 
 import {failFetchAccounts, loadAccounts} from "./actions"
 import {selectAccounts} from "./selectors"
+import {FetchAccountsAction} from "./types"
 
 
 export function* watchFetchAccounts(): SagaGenerator {
-  yield takeLeading("FetchAccounts", function* fetchAccountsEffect() {
+  yield takeLeading<FetchAccountsAction["type"]>("FetchAccounts", function* fetchAccountsEffect() {
     try {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const {data}: {data: Account[]} = yield call(axios, "/api/dashboard")
 
-      yield call(delay, 100)
-
-      if (Array.isArray(data)) {
+      if (Array.isArray(data) && data.length > 0) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const accountsState: AppState["accounts"] = yield select(selectAccounts)
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -41,11 +38,11 @@ export function* watchFetchAccounts(): SagaGenerator {
 
           if (Array.isArray(regions) && regions.length > 0) {
             for (const regionData of regions) {
-              const regionId = getRegionId(accountName, regionData.short_region)
+              const regionId = `${accountName.substring(0, 3).toLowerCase()}-${regionData.short_region}`
               const {environments, ...region} = regionData
 
               const envIds: EnvironmentId[] = []
-              if (Array.isArray(environments)) {
+              if (Array.isArray(environments) && environments.length > 0) {
                 for (const envData of environments) {
                   const {full_name: envId} = envData
                   envStore[envId] = envData
@@ -73,6 +70,9 @@ export function* watchFetchAccounts(): SagaGenerator {
           ids: Array.from(accountsIds),
         }))
       }
+
+      yield put(failFetchAccounts())
+
     } catch (e) {
       errorHandler(e)
       yield put(failFetchAccounts())

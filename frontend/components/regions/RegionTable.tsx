@@ -41,15 +41,11 @@ export default function RegionTable({id}: Props): ReactElement {
         </tr>
       </thead>
       <tbody>
-        {Array.isArray(environments) ? environments.map(envId => (
+        {environments.map(envId => (
           <EnvironmentRow
             id={envId}
             key={envId} />
-        )) : (
-          <tr>
-            <td colSpan={11}>Empty</td>
-          </tr>
-        )}
+        ))}
       </tbody>
     </table>
   )
