@@ -5,7 +5,7 @@ import {Outlet, useSearchParams} from "react-router-dom"
 import Avatar from "../avatar/Avatar"
 import BellRing from "../icons/BellRing"
 import Logo from "../logo/Logo"
-import Modal from "../Modal/Modal"
+import Modal from "../modal/Modal"
 import Tabs from "../tabs/Tabs"
 
 

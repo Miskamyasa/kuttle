@@ -1,7 +1,10 @@
-import {Fragment, ReactElement, ReactNode, useCallback, useEffect, useState} from "react"
+import {Fragment, ReactElement, ReactNode, useCallback, useEffect, useRef, useState} from "react"
 
 import {useSearchParams} from "react-router-dom"
 
+
+import stopPropagation from "../../helpers/stopPropagation"
+// import {useAppSelector} from "../../store/createStore"
 
 import Environment from "./Environment"
 
@@ -11,18 +14,28 @@ export default function Modal(): ReactElement {
 
   const [content, setContent] = useState<null | ReactNode>()
 
-  const ready = true // useAppSelector(state => state.common.ready)
+  const ready = true // useAppSelector(state => state.modal.ready)
 
   const modalShow = searchParams.get("modal")
 
+  //                           64 - header height
+  const top = useRef(64)
+
   useEffect(() => {
     if (modalShow) {
+      document.body.style.overflow = "hidden"
+      const headerGap = 64 - window.scrollY
+      top.current = headerGap > 0 ? headerGap : 0
+
       switch (modalShow) {
         case "environment":
           setContent(<Environment />)
       }
       return
     }
+
+    document.body.style.overflow = "visible"
+
     setContent(null)
   }, [modalShow])
 
@@ -45,9 +58,12 @@ export default function Modal(): ReactElement {
     <Fragment>
       {content && ready ? (
         <div
-          className={"fixed top-[64px] right-0 bottom-0 left-0 w-screen bg-amber-50"}
+          style={{top: `${top.current}px`}}
+          className={"fixed right-0 bottom-0 left-0 w-screen bg-black/25 backdrop-blur-[3px]"}
           onClick={dismiss}>
-          <div className={"absolute right-0 top-0 bottom-0 h-full w-[800px] bg-amber-100"}>
+          <div
+            className={"absolute right-0 top-0 bottom-0 h-full w-[880px] max-w-full bg-gray3 overflow-y-scroll"}
+            onClick={stopPropagation}>
             {content}
           </div>
         </div>
