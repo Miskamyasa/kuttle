@@ -9,7 +9,9 @@ const selectData = {
 }
 
 export default function DeployMethod(): ReactElement {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [deployMethod, setDeployMethod] = useState<string | null>(null)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [branch, setBranch] = useState<string | null>(null)
 
   return (

@@ -14,7 +14,7 @@ interface Props {
 
 export default function RegionTable({id}: Props): ReactElement {
   const store = useAppSelector(selectRegionsStore)
-  const {region = "Unknown", environments} = store[id]
+  const {region = "Unknown", name, environments} = store[id]
 
   return (
     <table className={"min-w-full border border-gray3"}>
@@ -23,7 +23,7 @@ export default function RegionTable({id}: Props): ReactElement {
           <th
             className={"p-3 text-xl text-left"}
             colSpan={11}>
-            {region}
+            {`${region} ${name ? `(${name})` : ""}`}
           </th>
         </tr>
         <tr>

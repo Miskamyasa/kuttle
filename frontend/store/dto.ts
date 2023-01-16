@@ -75,6 +75,7 @@ export interface Environment {
 export interface Region {
   region: string
   short_region: string
+  name: string
   environments?: Array<Environment> | null
 }
 

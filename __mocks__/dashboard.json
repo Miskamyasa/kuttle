@@ -4,6 +4,7 @@
     {
       "region": "eu-west-2",
       "short_region": "euw2",
+      "name": "Stockholm",
       "environments": [
         {
           "name": "dev1",
@@ -16,6 +17,303 @@
           "services": [
             {
               "name": "backend",
+              "version": null,
+              "cpu": 0.25,
+              "memory": 0.5,
+              "git_repo": null,
+              "cicd": {
+                "status": "done",
+                "method": "latest",
+                "version": "1.1.5",
+                "branch": "dev",
+                "path_to_manifest": null
+              },
+              "public": false
+            },
+            {
+              "name": "frontend",
+              "version": null,
+              "cpu": 0.25,
+              "memory": 0.5,
+              "git_repo": null,
+              "cicd": {
+                "status": "done",
+                "method": "latest",
+                "version": "1.1.5",
+                "branch": "dev",
+                "path_to_manifest": null
+              },
+              "public": false
+            }
+          ],
+          "resources": [
+            {
+              "name": "postgre",
+              "type": "sql",
+              "kind": "origin",
+              "status": "healthy"
+            },
+            {
+              "name": "mongo",
+              "type": "nosql",
+              "kind": "origin",
+              "status": "degraded"
+            },
+            {
+              "name": "redis",
+              "type": "cache",
+              "kind": "origin",
+              "status": "healthy"
+            },
+            {
+              "name": "s3",
+              "type": "object",
+              "kind": "managed",
+              "status": "healthy"
+            }
+          ],
+          "lifetime": {
+            "created": 1667313845,
+            "destroy": 1668091445
+          },
+          "owners": {
+            "id": 1,
+            "name": "Kuttle"
+          },
+          "tests": [
+            {
+              "name": null,
+              "status": null
+            }
+          ],
+          "costs": {
+            "hourly": 0.04
+          },
+          "logs": {
+            "dest": null,
+            "path": null
+          },
+          "links": [
+            {
+              "url": "https://kuttle.io"
+            }
+          ],
+          "comment": null
+        },
+        {
+          "name": "dev2",
+          "full_name": "dev-euw2-dev2",
+          "blueprint": {
+            "name": "main",
+            "version": 1.4,
+            "location": null
+          },
+          "services": [
+            {
+              "name": "backend",
+              "version": null,
+              "cpu": 0.25,
+              "memory": 0.5,
+              "git_repo": null,
+              "cicd": {
+                "status": "done",
+                "method": "latest",
+                "version": "1.1.5",
+                "branch": "dev",
+                "path_to_manifest": null
+              },
+              "public": false
+            },
+            {
+              "name": "frontend",
+              "version": null,
+              "cpu": 0.25,
+              "memory": 0.5,
+              "git_repo": null,
+              "cicd": {
+                "status": "done",
+                "method": "latest",
+                "version": "1.1.5",
+                "branch": "dev",
+                "path_to_manifest": null
+              },
+              "public": false
+            }
+          ],
+          "resources": [
+            {
+              "name": "postgre",
+              "type": "sql",
+              "kind": "origin",
+              "status": "healthy"
+            },
+            {
+              "name": "mongo",
+              "type": "nosql",
+              "kind": "origin",
+              "status": "degraded"
+            },
+            {
+              "name": "redis",
+              "type": "cache",
+              "kind": "origin",
+              "status": "healthy"
+            },
+            {
+              "name": "s3",
+              "type": "object",
+              "kind": "managed",
+              "status": "healthy"
+            }
+          ],
+          "lifetime": {
+            "created": 1667313845,
+            "destroy": 1668091445
+          },
+          "owners": {
+            "id": 1,
+            "name": "Kuttle"
+          },
+          "tests": [
+            {
+              "name": null,
+              "status": null
+            }
+          ],
+          "costs": {
+            "hourly": 0.04
+          },
+          "logs": {
+            "dest": null,
+            "path": null
+          },
+          "links": [
+            {
+              "url": "https://kuttle.io"
+            }
+          ],
+          "comment": null
+        },
+        {
+          "name": "dev3",
+          "full_name": "dev-euw2-dev3",
+          "blueprint": {
+            "name": "main",
+            "version": 1.4,
+            "location": null
+          },
+          "services": [
+            {
+              "name": "backend",
+              "version": null,
+              "cpu": 0.25,
+              "memory": 0.5,
+              "git_repo": null,
+              "cicd": {
+                "status": "done",
+                "method": "latest",
+                "version": "1.1.5",
+                "branch": "dev",
+                "path_to_manifest": null
+              },
+              "public": false
+            },
+            {
+              "name": "frontend",
+              "version": null,
+              "cpu": 0.25,
+              "memory": 0.5,
+              "git_repo": null,
+              "cicd": {
+                "status": "done",
+                "method": "latest",
+                "version": "1.1.5",
+                "branch": "dev",
+                "path_to_manifest": null
+              },
+              "public": false
+            }
+          ],
+          "resources": [
+            {
+              "name": "postgre",
+              "type": "sql",
+              "kind": "origin",
+              "status": "healthy"
+            },
+            {
+              "name": "mongo",
+              "type": "nosql",
+              "kind": "origin",
+              "status": "degraded"
+            },
+            {
+              "name": "redis",
+              "type": "cache",
+              "kind": "origin",
+              "status": "healthy"
+            },
+            {
+              "name": "s3",
+              "type": "object",
+              "kind": "managed",
+              "status": "healthy"
+            }
+          ],
+          "lifetime": {
+            "created": 1667313845,
+            "destroy": 1668091445
+          },
+          "owners": {
+            "id": 1,
+            "name": "Kuttle"
+          },
+          "tests": [
+            {
+              "name": null,
+              "status": null
+            }
+          ],
+          "costs": {
+            "hourly": 0.04
+          },
+          "logs": {
+            "dest": null,
+            "path": null
+          },
+          "links": [
+            {
+              "url": "https://kuttle.io"
+            }
+          ],
+          "comment": null
+        },
+        {
+          "name": "dev5",
+          "full_name": "dev-euw2-dev5",
+          "blueprint": {
+            "name": "main",
+            "version": 1.5,
+            "location": null
+          },
+          "services": [
+            {
+              "name": "backend",
+              "version": null,
+              "cpu": 0.25,
+              "memory": 0.5,
+              "git_repo": null,
+              "cicd": {
+                "status": "done",
+                "method": "latest",
+                "version": "1.1.5",
+                "branch": "dev",
+                "path_to_manifest": null
+              },
+              "public": false
+            },
+            {
+              "name": "frontend",
               "version": null,
               "cpu": 0.25,
               "memory": 0.5,
@@ -88,7 +386,109 @@
     }
   ]
 }, {
-  "account_name": "Production"
+  "account_name": "Production",
+  "regions": [
+    {
+      "region": "eu-east-1",
+      "short_region": "eue1",
+      "environments": [
+        {
+          "name": "dev5",
+          "full_name": "pro-eue1-dev5",
+          "blueprint": {
+            "name": "main",
+            "version": 1.5,
+            "location": null
+          },
+          "services": [
+            {
+              "name": "backend",
+              "version": null,
+              "cpu": 0.25,
+              "memory": 0.5,
+              "git_repo": null,
+              "cicd": {
+                "status": "done",
+                "method": "latest",
+                "version": "1.1.5",
+                "branch": "dev",
+                "path_to_manifest": null
+              },
+              "public": false
+            },
+            {
+              "name": "frontend",
+              "version": null,
+              "cpu": 0.25,
+              "memory": 0.5,
+              "git_repo": null,
+              "cicd": {
+                "status": "done",
+                "method": "latest",
+                "version": "1.1.5",
+                "branch": "dev",
+                "path_to_manifest": null
+              },
+              "public": false
+            }
+          ],
+          "resources": [
+            {
+              "name": "postgre",
+              "type": "sql",
+              "kind": "origin",
+              "status": "healthy"
+            },
+            {
+              "name": "mongo",
+              "type": "nosql",
+              "kind": "origin",
+              "status": "degraded"
+            },
+            {
+              "name": "redis",
+              "type": "cache",
+              "kind": "origin",
+              "status": "healthy"
+            },
+            {
+              "name": "s3",
+              "type": "object",
+              "kind": "managed",
+              "status": "healthy"
+            }
+          ],
+          "lifetime": {
+            "created": 1667313845,
+            "destroy": 1668091445
+          },
+          "owners": {
+            "id": 1,
+            "name": "Kuttle"
+          },
+          "tests": [
+            {
+              "name": null,
+              "status": null
+            }
+          ],
+          "costs": {
+            "hourly": 0.04
+          },
+          "logs": {
+            "dest": null,
+            "path": null
+          },
+          "links": [
+            {
+              "url": "https://kuttle.io"
+            }
+          ],
+          "comment": null
+        }
+      ]
+    }
+  ]
 }]
 
 
