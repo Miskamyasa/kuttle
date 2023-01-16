@@ -5,7 +5,7 @@ import {ReactElement} from "react"
 interface Props {
   width?: number
   height?: number
-  fill?: string
+  stroke?: string
   className?: string
 }
 
@@ -15,7 +15,7 @@ const iconSize = {
   ratio: 16 / 9,
 }
 
-export default function ChevronDown({width, height, fill = "#02163D", className}: Props): ReactElement {
+export default function ChevronDown({width, height, stroke = "#02163D", className}: Props): ReactElement {
   let w = iconSize.width
   let h = iconSize.height
 
@@ -42,7 +42,7 @@ export default function ChevronDown({width, height, fill = "#02163D", className}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2"
-        stroke={fill}
+        stroke={stroke}
         d="M15 1L8 8L1 1" />
     </svg>
   )
