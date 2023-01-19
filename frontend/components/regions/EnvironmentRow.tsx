@@ -1,4 +1,4 @@
-import {Fragment, ReactElement, useCallback} from "react"
+import {Fragment, ReactElement} from "react"
 
 import dayjs from "dayjs"
 import {Link} from "react-router-dom"
@@ -63,10 +63,6 @@ export default function EnvironmentRow({id}: Props): ReactElement {
   const store = useAppSelector(selectEnvironmentsStore)
   const data = store[id]
 
-  const handleClick = useCallback(() => {
-    // show env modal
-  }, [])
-
   if (!data) {
     return (
       <tr>
@@ -76,7 +72,7 @@ export default function EnvironmentRow({id}: Props): ReactElement {
   }
 
   return (
-    <tr onClick={handleClick}>
+    <tr>
       <Td>
         <Link
           to={"?modal=environment&id=" + data.full_name}

@@ -20,14 +20,7 @@ export default function Environment(): ReactElement | null {
   if (!id || !store[id]) {
     return null
   }
-
-  // eslint-disable-next-line no-console
-  console.log({
-    id,
-    store,
-    env: store[id],
-  })
-
+  
   const {full_name} = store[id]
 
   return (

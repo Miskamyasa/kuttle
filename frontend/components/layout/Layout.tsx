@@ -1,6 +1,6 @@
 import React, {ReactElement} from "react"
 
-import {Outlet, useSearchParams} from "react-router-dom"
+import {Outlet} from "react-router-dom"
 
 import Avatar from "../avatar/Avatar"
 import BellRing from "../icons/BellRing"
@@ -10,16 +10,6 @@ import Tabs from "../tabs/Tabs"
 
 
 export default function Layout(): ReactElement {
-  const [searchParams, setSearchParams] = useSearchParams()
-
-  // eslint-disable-next-line no-console
-  console.log({
-    searchParams,
-    modal: searchParams.get("modal"),
-    id: searchParams.get("id"),
-    setSearchParams,
-  })
-
   return (
     <div className={"flex flex-col min-h-screen"}>
       <div className={"bg-blueDark flex items-center h-16 px-10"}>
@@ -35,7 +25,6 @@ export default function Layout(): ReactElement {
           <Avatar name={"John Smith"} />
         </div>
       </div>
-      {/* 64px in calc function is h-16 for header */}
       <div className={"w-full bg-gray3 flex-grow"}>
         <Outlet />
       </div>

@@ -48,13 +48,6 @@ export default function Modal(): ReactElement {
     event.stopPropagation()
   }
 
-  // eslint-disable-next-line no-console
-  console.log({
-    modal: searchParams.get("modal"),
-    id: searchParams.get("id"),
-  })
-
-
   return (
     <Fragment>
       {content && ready ? (

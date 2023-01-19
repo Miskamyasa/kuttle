@@ -1,14 +1,17 @@
 import path from "path"
 
-import cookieParser from "cookie-parser"
 import express, {Express} from "express"
+import {auth} from "express-openid-connect"
 import helmet from "helmet"
+// import Knex from "knex"
 import {createServer as createViteServer} from "vite"
 
-import auth from "./middlewares/auth"
-import showError from "./middlewares/showError"
+// import knexConfig from "../knexfile"
+
 import apiRouter from "./routers/api"
 
+
+const {NODE_ENV} = process.env
 
 const publicDir = path.resolve(__dirname, "public")
 
@@ -19,21 +22,29 @@ function resolve(filename: string): string {
 export default async function createServer(): Promise<Express> {
   const app = express()
 
-  if (process.env.NODE_ENV === "production") {
+  // const knex = Knex(knexConfig[NODE_ENV])
+
+  if (NODE_ENV === "production") {
     app.use(helmet())
   }
 
   app.use(express.urlencoded({extended: false}))
   app.use(express.json())
-  app.use(cookieParser(process.env.COOKIE_SECRET))
 
-  if (process.env.CROSS_ENV === "miskamyasa") {
-    app.use(auth)
-  }
+  app.use(auth({
+    idpLogout: true,
+    authorizationParams: {
+      response_type: "code",
+      scope: "openid profile email groups",
+    },
+    routes: {
+      callback: "/auth/callback",
+    },
+  }))
 
   app.use(apiRouter)
 
-  if (process.env.NODE_ENV === "development") {
+  if (NODE_ENV === "development") {
     const vite = await createViteServer({
       server: {middlewareMode: true},
       appType: "spa",
@@ -46,8 +57,6 @@ export default async function createServer(): Promise<Express> {
   app.get("*", (req, res) => {
     res.sendFile(resolve("index"))
   })
-
-  app.use(showError)
 
   return app
 }
