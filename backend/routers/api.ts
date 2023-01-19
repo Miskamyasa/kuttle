@@ -6,10 +6,7 @@ import dashboardJson from "../__mocks__/dashboard.json"
 const apiRouter = Router()
 
 apiRouter.use((req, res, next) => {
-  // console.log({
-  //   oidc: req.oidc,
-  //   user: req.oidc.user,
-  // })
+  // console.log({oidc: req.oidc, user: req.oidc.user})
   next()
 })
 

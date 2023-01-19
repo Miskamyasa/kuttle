@@ -45,15 +45,15 @@
     "types": []
   },
   "include": [
-    "./vite.config.js",
-    "./knexfile.ts",
-    "./migrations",
-    "./frontend",
-    "./backend",
-    "./build.ts"
+    "vite.config.js",
+    "knexfile.ts",
+    "migrations",
+    "frontend",
+    "backend",
+    "build.ts"
   ],
   "exclude": [
-    "./dist",
-    "./frontend/assets"
+    "dist",
+    "frontend/assets"
   ]
 }
