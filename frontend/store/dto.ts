@@ -40,8 +40,8 @@ export interface Owners {
 }
 
 export interface Test {
-  name: null
-  status: null
+  name: string
+  status: "running" | "success" | "fail" | "unknown"
 }
 
 export interface Costs {

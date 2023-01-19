@@ -82,8 +82,20 @@
           },
           "tests": [
             {
-              "name": null,
-              "status": null
+              "name": "backend",
+              "status": "fail"
+            },
+            {
+              "name": "frontend",
+              "status": "success"
+            },
+            {
+              "name": "db",
+              "status": "running"
+            },
+            {
+              "name": "other",
+              "status": "unknown"
             }
           ],
           "costs": {

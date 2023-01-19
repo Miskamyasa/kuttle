@@ -4,7 +4,7 @@ import dayjs from "dayjs"
 import {Link} from "react-router-dom"
 
 import {useAppSelector} from "../../store/createStore"
-import {Cicd, Owners, Resource} from "../../store/dto"
+import {Cicd, Owners, Resource, Test} from "../../store/dto"
 import {selectEnvironmentsStore} from "../../store/environments/selectors"
 import {EnvironmentId} from "../../store/environments/types"
 import Bucket from "../icons/Bucket"
@@ -13,6 +13,10 @@ import Grafana from "../icons/Grafana"
 import LinkIcon from "../icons/Link"
 import NoSQL from "../icons/NoSQL"
 import SQL from "../icons/SQL"
+import TestFail from "../icons/TestFail"
+import TestOk from "../icons/TestOk"
+import TestRunning from "../icons/TestRunning"
+import TestWarning from "../icons/TestWarning"
 
 import Td from "./Td"
 
@@ -44,6 +48,21 @@ function getResourceIconElement(resource: Resource): ReactElement | null {
       return <Cache className={className} />
     case "object":
       return <Bucket className={className} />
+    default:
+      return null
+  }
+}
+
+function getTestIconElement(test: Test): ReactElement | null {
+  switch (test.status) {
+    case "success":
+      return <TestOk />
+    case "fail":
+      return <TestFail />
+    case "unknown":
+      return <TestWarning />
+    case "running":
+      return <TestRunning />
     default:
       return null
   }
@@ -121,7 +140,18 @@ export default function EnvironmentRow({id}: Props): ReactElement {
           </div>
         </div>
       </Td>
-      <Td>Test</Td>
+      <Td>
+        <div className={"flex"}>
+          {data.tests?.map(item => (
+            <div
+              className={"flex justify-center items-center mr-3"}
+              key={item.name}
+              title={item.name || "Unknown"}>
+              {getTestIconElement(item)}
+            </div>
+          ))}
+        </div>
+      </Td>
       <Td>
         <div className={"rounded-full bg-blueDark text-white text-xs m-auto w-6 h-6 flex justify-center items-center"}>
           {getOwnerName(data.owners)}
