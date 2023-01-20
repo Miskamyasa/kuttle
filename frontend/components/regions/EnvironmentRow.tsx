@@ -5,6 +5,7 @@ import {Link} from "react-router-dom"
 
 import getAvatarColor from "../../helpers/getAvatarColor"
 import getNameChars from "../../helpers/getNameChars"
+import getTimeDiffInPercent from "../../helpers/getTimeDiffInPercent"
 import {useAppSelector} from "../../store/createStore"
 import {Cicd, Resource, Test} from "../../store/dto"
 import {selectEnvironmentsStore} from "../../store/environments/selectors"
@@ -122,7 +123,7 @@ export default function EnvironmentRow({id}: Props): ReactElement {
             {data.resources.map((item) => (
               <div
                 key={item.name}
-                className={"flex items-center justify-center mr-3"}
+                className={"flex items-center justify-center mr-3 last:mr-0"}
                 title={item.name}>
                 {getResourceIconElement(item)}
               </div>
@@ -132,16 +133,25 @@ export default function EnvironmentRow({id}: Props): ReactElement {
       </Td>
       <Td>
         <div className={"text-center"}>
-          <div className={"text-xs"}>
-            {dayjs(data.lifetime.created * 1000).fromNow()}
+          <div className={"text-xs mb-2"}>
+            {dayjs.unix(data.lifetime.created).fromNow()}
           </div>
+          {getTimeDiffInPercent(data.lifetime.created, data.lifetime.destroy) > 0 ? (
+            <div className={"h-1 w-full rounded-xl bg-kuttle-gradient relative"}>
+              <div
+                className={"h-1 bg-white absolute right-0 top-0 bottom-0"}
+                style={{width: `${100 - getTimeDiffInPercent(data.lifetime.created, data.lifetime.destroy)}%`}} />
+            </div>
+          ) : (
+            <div className={"h-1 w-full rounded-xl bg-gray3"} />
+          )}
         </div>
       </Td>
       <Td>
         <div className={"flex"}>
           {data.tests?.map(item => (
             <div
-              className={"flex justify-center items-center mr-3"}
+              className={"flex justify-center items-center mr-3 last:mr-0"}
               key={item.name}
               title={item.name || "Unknown"}>
               {getTestIconElement(item)}
