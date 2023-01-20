@@ -1,5 +1,7 @@
 import {ReactElement} from "react"
 
+import getNameChars from "../../helpers/getNameChars"
+
 
 interface Props {
   name?: string
@@ -14,10 +16,7 @@ export default function Avatar({name, imgSrc}: Props): ReactElement {
       alt={name || "Avatar"} />
   ) : (
     <div className={"text-xs font-bold text-white"}>
-      {name
-        ?.split(" ")
-        .map((p) => p.charAt(0).toUpperCase())
-        .join("")}
+      {getNameChars(name)}
     </div>
   )
 

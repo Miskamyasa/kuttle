@@ -7,7 +7,7 @@ export default function TestRunning(): ReactElement {
     <svg
       width={26}
       height={26}
-      className={"stroke-gray1"}
+      className={"stroke-blue1"}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 26 27">

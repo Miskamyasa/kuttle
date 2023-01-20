@@ -3,8 +3,10 @@ import {Fragment, ReactElement} from "react"
 import dayjs from "dayjs"
 import {Link} from "react-router-dom"
 
+import getAvatarColor from "../../helpers/getAvatarColor"
+import getNameChars from "../../helpers/getNameChars"
 import {useAppSelector} from "../../store/createStore"
-import {Cicd, Owners, Resource, Test} from "../../store/dto"
+import {Cicd, Resource, Test} from "../../store/dto"
 import {selectEnvironmentsStore} from "../../store/environments/selectors"
 import {EnvironmentId} from "../../store/environments/types"
 import Bucket from "../icons/Bucket"
@@ -68,11 +70,6 @@ function getTestIconElement(test: Test): ReactElement | null {
   }
 }
 
-function getOwnerName(owner: Owners): string {
-  const [fname = "X", sname = ""] = owner.name.split(" ")
-  return fname.charAt(0).toUpperCase() + sname.charAt(0).toUpperCase()
-}
-
 interface Props {
   id: EnvironmentId
 }
@@ -114,7 +111,7 @@ export default function EnvironmentRow({id}: Props): ReactElement {
               <div
                 key={item.name}
                 title={item.name}
-                className={`mx-2 w-[15px] h-[15px] rounded-full bg-${getColor(item.cicd.status)}`} />
+                className={`ml-2 w-[15px] h-[15px] rounded-full bg-${getColor(item.cicd.status)}`} />
             ))}
           </div>
         )}
@@ -153,8 +150,10 @@ export default function EnvironmentRow({id}: Props): ReactElement {
         </div>
       </Td>
       <Td>
-        <div className={"rounded-full bg-blueDark text-white text-xs m-auto w-6 h-6 flex justify-center items-center"}>
-          {getOwnerName(data.owners)}
+        <div
+          className={"rounded-full text-white text-xs m-auto w-6 h-6 flex justify-center items-center"}
+          style={{backgroundColor: getAvatarColor(data.owners.name)}}>
+          {getNameChars(data.owners.name)}
         </div>
       </Td>
       <Td>

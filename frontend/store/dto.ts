@@ -69,7 +69,7 @@ export interface Environment {
   costs: Costs
   logs?: Logs | null
   links?: Array<Link> | null
-  comment?: null
+  description?: null
 }
 
 export interface Region {
