@@ -101,12 +101,12 @@ export default function EnvironmentRow({id}: Props): ReactElement {
         <div>{data.blueprint.name}</div>
       </Td>
       <Td>
-        <div className={"text-center"}>{data.blueprint.version}</div>
+        <div className={"text-center"}>{Number(data.blueprint.version).toFixed(1)}</div>
       </Td>
       <Td>
         {data.services && (
           <div className={"flex items-center"}>
-            <div>{data.services.length}</div>
+            <div className={"mr-2"}>{data.services.length}</div>
             {data.services.map((item) => (
               <div
                 key={item.name}

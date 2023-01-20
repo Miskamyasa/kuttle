@@ -236,11 +236,2013 @@
               },
               {
                 "name": "E2E",
+                "status": "running"
+              }
+            ],
+            "costs": {
+              "hourly": 0.05
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "dev2",
+            "full_name": "dev-eun1-dev2",
+            "blueprint": {
+              "name": "main",
+              "version": 1.1,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "fail",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "redis",
+                "type": "cache",
+                "kind": "origin",
+                "status": "healthy"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "Daniel Spectre"
+            },
+            "tests": [
+              {
+                "name": "Short",
+                "status": "running"
+              },
+              {
+                "name": "Full",
+                "status": "unknown"
+              },
+              {
+                "name": "E2E",
+                "status": "success"
+              }
+            ],
+            "costs": {
+              "hourly": 0.04
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "stg1",
+            "full_name": "dev-eun1-stg1",
+            "blueprint": {
+              "name": "staging",
+              "version": 1.0,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "fail",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "degraded"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "degraded"
+              },
+              {
+                "name": "s3",
+                "type": "object",
+                "kind": "managed",
+                "status": "unknown"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "David Voloz"
+            },
+            "tests": [
+              {
+                "name": "Short",
+                "status": "success"
+              },
+              {
+                "name": "Full",
+                "status": "running"
+              },
+              {
+                "name": "E2E",
+                "status": "fail"
+              }
+            ],
+            "costs": {
+              "hourly": 0.04
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "stg2",
+            "full_name": "dev-eun1-stg2",
+            "blueprint": {
+              "name": "staging",
+              "version": 1.0,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "s3",
+                "type": "object",
+                "kind": "managed",
+                "status": "healthy"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "David Voloz"
+            },
+            "tests": [
+              {
+                "name": "Short",
+                "status": "success"
+              },
+              {
+                "name": "Full",
+                "status": "success"
+              },
+              {
+                "name": "E2E",
+                "status": "success"
+              }
+            ],
+            "costs": {
+              "hourly": 0.04
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "demo1",
+            "full_name": "dev-eun1-demo1",
+            "blueprint": {
+              "name": "main",
+              "version": 1.2,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service11",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service12",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "redis",
+                "type": "cache",
+                "kind": "origin",
+                "status": "healthy"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "Daniel Spectre"
+            },
+            "tests": [
+              {
+                "name": "Short",
+                "status": "success"
+              },
+              {
+                "name": "Full",
+                "status": "success"
+              },
+              {
+                "name": "E2E",
                 "status": "success"
               }
             ],
             "costs": {
               "hourly": 0.05
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "demo2",
+            "full_name": "dev-eun1-demo2",
+            "blueprint": {
+              "name": "main",
+              "version": 1.2,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service11",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service12",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "redis",
+                "type": "cache",
+                "kind": "origin",
+                "status": "healthy"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "Daniel Spectre"
+            },
+            "tests": [
+              {
+                "name": "Short",
+                "status": "success"
+              },
+              {
+                "name": "Full",
+                "status": "success"
+              },
+              {
+                "name": "E2E",
+                "status": "success"
+              }
+            ],
+            "costs": {
+              "hourly": 0.05
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "demo3",
+            "full_name": "dev-eun1-demo3",
+            "blueprint": {
+              "name": "main",
+              "version": 1.2,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service11",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service12",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "unknown",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "redis",
+                "type": "cache",
+                "kind": "origin",
+                "status": "healthy"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "Daniel Spectre"
+            },
+            "tests": [
+              {
+                "name": "Short",
+                "status": "success"
+              },
+              {
+                "name": "Full",
+                "status": "success"
+              },
+              {
+                "name": "E2E",
+                "status": "success"
+              }
+            ],
+            "costs": {
+              "hourly": 0.05
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "shared",
+            "full_name": "dev-eun1-shared",
+            "blueprint": {
+              "name": "shared",
+              "version": 1.3,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "redis",
+                "type": "cache",
+                "kind": "origin",
+                "status": "healthy"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "David Voloz"
+            },
+            "tests": [],
+            "costs": {
+              "hourly": 0.03
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "test1",
+            "full_name": "dev-eun1-test1",
+            "blueprint": {
+              "name": "main",
+              "version": 1.3,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "unknown",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service11",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service12",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service13",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service14",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "degraded"
+              },
+              {
+                "name": "redis",
+                "type": "cache",
+                "kind": "origin",
+                "status": "degraded"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "Nick Shredder"
+            },
+            "tests": [
+              {
+                "name": "E2E",
+                "status": "running"
+              }
+            ],
+            "costs": {
+              "hourly": 0.06
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "test2",
+            "full_name": "dev-eun1-test2",
+            "blueprint": {
+              "name": "main",
+              "version": 1.3,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "unknown",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "unknown",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service11",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service12",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service13",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service14",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "inflight",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "unknown"
+              },
+              {
+                "name": "redis",
+                "type": "cache",
+                "kind": "origin",
+                "status": "degraded"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "Nick Shredder"
+            },
+            "tests": [
+              {
+                "name": "E2E",
+                "status": "running"
+              }
+            ],
+            "costs": {
+              "hourly": 0.06
             },
             "links": [
               {
@@ -485,7 +2487,7 @@
               },
               {
                 "name": "E2E",
-                "status": "success"
+                "status": "running"
               }
             ],
             "costs": {
@@ -689,11 +2691,11 @@
             "tests": [
               {
                 "name": "Short",
-                "status": "success"
+                "status": "running"
               },
               {
                 "name": "Full",
-                "status": "success"
+                "status": "unknown"
               },
               {
                 "name": "E2E",
@@ -701,7 +2703,7 @@
               }
             ],
             "costs": {
-              "hourly": 0.05
+              "hourly": 0.04
             },
             "links": [
               {
@@ -918,6 +2920,12 @@
                 "type": "cache",
                 "kind": "origin",
                 "status": "unknown"
+              },
+              {
+                "name": "s3",
+                "type": "object",
+                "kind": "managed",
+                "status": "healthy"
               }
             ],
             "lifetime": {
@@ -927,6 +2935,1458 @@
             "owners": {
               "id": 1,
               "name": "David Voloz"
+            },
+            "tests": [
+              {
+                "name": "Short",
+                "status": "success"
+              },
+              {
+                "name": "Full",
+                "status": "running"
+              },
+              {
+                "name": "E2E",
+                "status": "fail"
+              }
+            ],
+            "costs": {
+              "hourly": 0.04
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "demo1",
+            "full_name": "dev-use1-demo1",
+            "blueprint": {
+              "name": "main",
+              "version": 1.2,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service11",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service12",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "redis",
+                "type": "cache",
+                "kind": "origin",
+                "status": "healthy"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "Daniel Spectre"
+            },
+            "tests": [
+              {
+                "name": "Short",
+                "status": "success"
+              },
+              {
+                "name": "Full",
+                "status": "success"
+              },
+              {
+                "name": "E2E",
+                "status": "success"
+              }
+            ],
+            "costs": {
+              "hourly": 0.04
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "demo2",
+            "full_name": "dev-use1-demo2",
+            "blueprint": {
+              "name": "main",
+              "version": 1.2,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service11",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service12",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "redis",
+                "type": "cache",
+                "kind": "origin",
+                "status": "healthy"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "Daniel Spectre"
+            },
+            "tests": [
+              {
+                "name": "Short",
+                "status": "success"
+              },
+              {
+                "name": "Full",
+                "status": "success"
+              },
+              {
+                "name": "E2E",
+                "status": "success"
+              }
+            ],
+            "costs": {
+              "hourly": 0.04
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "demo3",
+            "full_name": "dev-use1-demo3",
+            "blueprint": {
+              "name": "main",
+              "version": 1.2,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "unknown",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service11",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service12",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "redis",
+                "type": "cache",
+                "kind": "origin",
+                "status": "healthy"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "Daniel Spectre"
+            },
+            "tests": [
+              {
+                "name": "Short",
+                "status": "success"
+              },
+              {
+                "name": "Full",
+                "status": "success"
+              },
+              {
+                "name": "E2E",
+                "status": "success"
+              }
+            ],
+            "costs": {
+              "hourly": 0.04
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "test1",
+            "full_name": "dev-use1-test1",
+            "blueprint": {
+              "name": "main",
+              "version": 1.2,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service11",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service12",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "redis",
+                "type": "cache",
+                "kind": "origin",
+                "status": "healthy"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "Daniel Spectre"
+            },
+            "tests": [
+              {
+                "name": "Short",
+                "status": "success"
+              },
+              {
+                "name": "Full",
+                "status": "success"
+              },
+              {
+                "name": "E2E",
+                "status": "success"
+              }
+            ],
+            "costs": {
+              "hourly": 0.04
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "test2",
+            "full_name": "dev-use1-test2",
+            "blueprint": {
+              "name": "main",
+              "version": 1.2,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service11",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service12",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "redis",
+                "type": "cache",
+                "kind": "origin",
+                "status": "healthy"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "Daniel Spectre"
+            },
+            "tests": [
+              {
+                "name": "Short",
+                "status": "success"
+              },
+              {
+                "name": "Full",
+                "status": "success"
+              },
+              {
+                "name": "E2E",
+                "status": "success"
+              }
+            ],
+            "costs": {
+              "hourly": 0.04
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "test3",
+            "full_name": "dev-use1-test3",
+            "blueprint": {
+              "name": "main",
+              "version": 1.2,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service5",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service6",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service7",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service8",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service9",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service10",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service11",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service12",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "redis",
+                "type": "cache",
+                "kind": "origin",
+                "status": "healthy"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "Daniel Spectre"
             },
             "tests": [
               {
@@ -943,7 +4403,116 @@
               }
             ],
             "costs": {
-              "hourly": 0.05
+              "hourly": 0.04
+            },
+            "links": [
+              {
+                "url": "https://kuttle.io"
+              }
+            ],
+            "description": null
+          },
+          {
+            "name": "shared",
+            "full_name": "dev-use1-shared",
+            "blueprint": {
+              "name": "shared",
+              "version": 1.3,
+              "location": null
+            },
+            "services": [
+              {
+                "name": "service1",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service2",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service3",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              },
+              {
+                "name": "service4",
+                "version": null,
+                "cpu": 0.25,
+                "memory": 0.5,
+                "git_repo": null,
+                "cicd": {
+                  "status": "done",
+                  "method": "latest",
+                  "version": "1.1.5",
+                  "branch": "dev",
+                  "path_to_manifest": null
+                },
+                "public": false
+              }
+            ],
+            "resources": [
+              {
+                "name": "postgre",
+                "type": "sql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "mongo",
+                "type": "nosql",
+                "kind": "origin",
+                "status": "healthy"
+              },
+              {
+                "name": "s3",
+                "type": "object",
+                "kind": "managed",
+                "status": "healthy"
+              }
+            ],
+            "lifetime": {
+              "created": 1667313845,
+              "destroy": 1668091445
+            },
+            "owners": {
+              "id": 1,
+              "name": "David Voloz"
+            },
+            "tests": [],
+            "costs": {
+              "hourly": 0.02
             },
             "links": [
               {

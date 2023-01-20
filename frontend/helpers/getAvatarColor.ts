@@ -15,9 +15,9 @@ function normalizeHash(hash: number, min: number, max: number): number {
 
 function generateHSL(name: string): HSL {
   const hash = getHashOfString(name)
-  const hue = normalizeHash(hash, 150, 290)
-  const saturation = normalizeHash(hash, 50, 80)
-  const lightness = normalizeHash(hash, 0, 75)
+  const hue = normalizeHash(hash, 110, 250)
+  const saturation = normalizeHash(hash, 40, 70)
+  const lightness = normalizeHash(hash, 5, 55)
   return [hue, saturation, lightness]
 }
 

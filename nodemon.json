@@ -3,7 +3,7 @@
     "backend",
     "__mock__"
   ],
-  "ext": "ts",
+  "ext": "ts,json",
   "ignore": [
     "dist",
     "frontend"
