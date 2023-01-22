@@ -1,4 +1,4 @@
-import {Fragment, MouseEvent, ReactElement, ReactNode, useCallback, useEffect, useRef, useState} from "react"
+import {MouseEvent, ReactElement, ReactNode, useCallback, useEffect, useRef, useState} from "react"
 
 import {useSearchParams} from "react-router-dom"
 
@@ -48,20 +48,20 @@ export default function Modal(): ReactElement {
     event.stopPropagation()
   }
 
+  const className = ""
+    + "absolute right-0 top-0 bottom-0 h-full w-[880px] max-w-full "
+    + "bg-gray3 overflow-y-scroll transition-transform "
+
   return (
-    <Fragment>
-      {content && ready ? (
-        <div
-          style={{top: `${top.current}px`}}
-          className={"fixed right-0 bottom-0 left-0 w-screen bg-black/25 backdrop-blur-[3px]"}
-          onClick={dismiss}>
-          <div
-            className={"absolute right-0 top-0 bottom-0 h-full w-[880px] max-w-full bg-gray3 overflow-y-scroll"}
-            onClick={stopPropagation}>
-            {content}
-          </div>
-        </div>
-      ) : null}
-    </Fragment>
+    <div
+      style={{top: `${top.current}px`, visibility: content && ready ? "visible" : "hidden"}}
+      className={"fixed right-0 bottom-0 left-0 w-screen bg-black/25 backdrop-blur-[3px]"}
+      onClick={dismiss}>
+      <div
+        className={className + ((content && ready) ? "translate-x-0" : "translate-x-96")}
+        onClick={stopPropagation}>
+        {content}
+      </div>
+    </div>
   )
 }
