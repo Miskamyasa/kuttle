@@ -3,9 +3,10 @@ import {ReactElement} from "react"
 import {useAppSelector} from "../../store/createStore"
 import {selectRegionsStore} from "../../store/regions/selectors"
 import {RegionId} from "../../store/regions/types"
+import Table from "../table/Table"
+import Th from "../table/Th"
 
 import EnvironmentRow from "./EnvironmentRow"
-import Th from "./Th"
 
 
 interface Props {
@@ -17,7 +18,7 @@ export default function RegionTable({id}: Props): ReactElement {
   const {region = "Unknown", name, environments} = store[id]
 
   return (
-    <table className={"min-w-full border border-gray3"}>
+    <Table>
       <thead>
         <tr>
           <th
@@ -47,6 +48,6 @@ export default function RegionTable({id}: Props): ReactElement {
             key={envId} />
         ))}
       </tbody>
-    </table>
+    </Table>
   )
 }

@@ -32,37 +32,42 @@ export function* watchFetchAccounts(): SagaGenerator {
         for (const accountData of data) {
           const {regions, ...account} = accountData
 
-          const accountName = account.account_name
+          const accountId = account.account_name.toLowerCase()
 
           const ids: RegionId[] = []
 
           if (Array.isArray(regions) && regions.length > 0) {
             for (const regionData of regions) {
-              const regionId = `${accountName.substring(0, 3).toLowerCase()}-${regionData.short_region}`
+              const regionId = `${accountId}-${regionData.short_region}`
               const {environments, ...region} = regionData
 
               const envIds: EnvironmentId[] = []
               if (Array.isArray(environments) && environments.length > 0) {
                 for (const envData of environments) {
                   const {full_name: envId} = envData
-                  envStore[envId] = envData
+                  envStore[envId] = {
+                    ...envData,
+                    regionId,
+                    accountId,
+                  }
                   envIds.push(envId)
                 }
               }
 
               regionsStore[regionId] = {
                 ...region,
+                accountId,
                 environments: envIds,
               }
               ids.push(regionId)
             }
           }
 
-          accountsState.store[accountName] = {
+          accountsState.store[accountId] = {
             ...account,
             regions: ids,
           }
-          accountsIds.add(accountName)
+          accountsIds.add(accountId)
         }
 
         yield put(loadAccounts({

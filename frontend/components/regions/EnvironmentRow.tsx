@@ -4,6 +4,7 @@ import dayjs from "dayjs"
 import {Link} from "react-router-dom"
 
 import getAvatarColor from "../../helpers/getAvatarColor"
+import {getDailyCosts, getMonthlyCosts} from "../../helpers/getCosts"
 import getNameChars from "../../helpers/getNameChars"
 import getTimeDiffInPercent from "../../helpers/getTimeDiffInPercent"
 import {useAppSelector} from "../../store/createStore"
@@ -20,8 +21,7 @@ import TestFail from "../icons/TestFail"
 import TestOk from "../icons/TestOk"
 import TestRunning from "../icons/TestRunning"
 import TestWarning from "../icons/TestWarning"
-
-import Td from "./Td"
+import Td from "../table/Td"
 
 
 function getColor(state: Resource["status"] | Cicd["status"]): string {
@@ -171,10 +171,10 @@ export default function EnvironmentRow({id}: Props): ReactElement {
           {data.costs.hourly ? (
             <Fragment>
               <div>
-                {`$${Number((data.costs.hourly) * 24).toFixed(2)} / day`}
+                {getDailyCosts(data.costs.hourly)}
               </div>
               <div className={"text-gray2"}>
-                {`$${Number((data.costs.hourly) * 24 * 30).toFixed(2)} / month`}
+                {getMonthlyCosts(data.costs.hourly)}
               </div>
             </Fragment>
           ) : "Unknown"}

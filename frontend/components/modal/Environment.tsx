@@ -2,20 +2,25 @@ import {ReactElement} from "react"
 
 import {useSearchParams} from "react-router-dom"
 
-import {selectAccounts} from "../../store/accounts/selectors"
+import {selectAccounts, selectAccountsStore} from "../../store/accounts/selectors"
 import {useAppSelector} from "../../store/createStore"
 import {selectEnvironmentsStore} from "../../store/environments/selectors"
+import {selectRegionsStore} from "../../store/regions/selectors"
 import Spinner from "../loaders/Spinner"
 import NameValueDate from "../text/NameValueDate"
 import NameValueText from "../text/NameValueText"
 
-import Card from "./card/Card"
-import DeployMethod from "./card/DeployMethod"
+import AppSettings from "./AppSettings"
+import Card from "./Card"
+import DeployMethod from "./DeployMethod"
+import Resources from "./Resources"
 
 
 export default function Environment(): ReactElement | null {
   const [searchParams] = useSearchParams()
   const store = useAppSelector(selectEnvironmentsStore)
+  const accountsStore = useAppSelector(selectAccountsStore)
+  const regionsStore = useAppSelector(selectRegionsStore)
 
   // FIXME: we need to replace it with normal logic, where modal reducer can set some loading state for itself
   const {loading} = useAppSelector(selectAccounts) // it makes rerender
@@ -30,14 +35,21 @@ export default function Environment(): ReactElement | null {
   const id = searchParams.get("id")
 
   if (!id || !store[id]) {
+    // TODO: report error to backend.
     return null
   }
 
-  const {full_name, blueprint} = store[id]
+  const {full_name, blueprint, regionId, accountId} = store[id]
 
   return (
     <div className={"p-10"}>
-      <div className={"text-xl font-bold text-blueDark"}>{full_name}</div>
+      <div className={"text-xl text-blueDark"}>
+        {accountsStore[accountId].account_name}
+        &nbsp;&nbsp;/&nbsp;&nbsp;
+        {regionsStore[regionId].region}
+        &nbsp;&nbsp;/&nbsp;&nbsp;
+        <span className={"font-bold "}>{full_name}</span>
+      </div>
       <div className={"mt-10 mb-5 flex flex-row flex-wrap"}>
         <NameValueDate
           wrapperClassName={"mr-16 mb-5"}
@@ -56,10 +68,10 @@ export default function Environment(): ReactElement | null {
         <DeployMethod />
       </Card>
       <Card title={"App settings"}>
-        <div>Content</div>
+        <AppSettings environmentId={id} />
       </Card>
       <Card title={"Resources"}>
-        <div>Content</div>
+        <Resources environmentId={id} />
       </Card>
     </div>
   )

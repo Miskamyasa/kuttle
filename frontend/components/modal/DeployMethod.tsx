@@ -1,6 +1,6 @@
 import {ReactElement, useState} from "react"
 
-import Select from "../../select/Select"
+import Select from "../select/Select"
 
 
 const selectData = {
@@ -9,8 +9,10 @@ const selectData = {
 }
 
 export default function DeployMethod(): ReactElement {
+  // FIXME: ⬇️
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [deployMethod, setDeployMethod] = useState<string | null>(null)
+  // FIXME: ⬇️
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [branch, setBranch] = useState<string | null>(null)
 
