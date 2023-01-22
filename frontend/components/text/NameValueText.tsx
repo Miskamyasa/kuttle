@@ -3,7 +3,7 @@ import {ReactElement, useMemo} from "react"
 
 interface Props {
   name: string
-  value: string
+  value: string | number
   wrapperClassName?: string
 }
 

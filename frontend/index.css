@@ -16,6 +16,10 @@ body {
     background-image: var(--kuttleGradient);
   }
 
+  .border-kuttle-gradient {
+    border-image: var(--kuttleGradient) 1;
+  }
+
   .kuttle-tabs a {
     @apply relative h-full flex justify-center items-center px-6;
   }
