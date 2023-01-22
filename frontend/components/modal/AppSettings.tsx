@@ -30,7 +30,17 @@ export default function AppSettings({environmentId}: Props): ReactElement {
       <tbody>
         {services?.map(service => (
           <tr key={service.name}>
-            <Td sm>{service.name}</Td>
+            <Td sm>
+              <div className={"flex items-baseline"}>
+                <div className={"border border-green overflow-hidden rounded relative"}>
+                  <div className={"z-2 text-xs px-1 py-0.5"}>v{service.version || "X.X.X"}</div>
+                  <div className={"absolute w-100 h-100 z-1 top-0 right-0 bottom-0 left-0 bg-green opacity-10"}></div>
+                </div>
+                <div className={"ml-2"}>
+                  {service.name}
+                </div>
+              </div>
+            </Td>
             <Td sm>
               {`${service.cpu} vCPU + ${service.memory} Gb RAM`}
             </Td>
