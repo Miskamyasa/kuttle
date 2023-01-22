@@ -31,16 +31,18 @@ export default async function createServer(): Promise<Express> {
   app.use(express.urlencoded({extended: false}))
   app.use(express.json())
 
-  app.use(auth({
-    idpLogout: true,
-    authorizationParams: {
-      response_type: "code",
-      scope: "openid profile email groups",
-    },
-    routes: {
-      callback: "/auth/callback",
-    },
-  }))
+  if (NODE_ENV === "production") {
+    app.use(auth({
+      idpLogout: true,
+      authorizationParams: {
+        response_type: "code",
+        scope: "openid profile email groups",
+      },
+      routes: {
+        callback: "/auth/callback",
+      },
+    }))
+  }
 
   app.use(apiRouter)
 
