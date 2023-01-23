@@ -1,20 +1,21 @@
 export interface Blueprint {
   name: string
-  version: number
+  version?: number | null
+  default_version?: number | null
   location?: null
 }
 
 export interface Cicd {
   status: "done" | "inflight" | "unknown" | "fail"
   method: string
-  version: string
+  version?: string | null
   branch: string
   path_to_manifest?: null
 }
 
 export interface Service {
   name: string
-  version?: null
+  version?: string | null
   cpu: number
   memory: number
   git_repo?: null

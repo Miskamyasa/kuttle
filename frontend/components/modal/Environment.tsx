@@ -62,7 +62,7 @@ export default function Environment(): ReactElement | null {
         <NameValueText
           wrapperClassName={"mr-16 mb-5"}
           name={"Version"}
-          value={blueprint.version} />
+          value={blueprint.version || "X.X.X"} />
       </div>
       <Card title={"Deploy method"}>
         <DeployMethod />
