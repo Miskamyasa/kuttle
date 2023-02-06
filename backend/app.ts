@@ -1,7 +1,7 @@
 import path from "path"
 
 import express, {Express} from "express"
-import {auth} from "express-openid-connect"
+// import {auth} from "express-openid-connect"
 import helmet from "helmet"
 // import Knex from "knex"
 import {createServer as createViteServer} from "vite"
@@ -32,16 +32,16 @@ export default async function createServer(): Promise<Express> {
   app.use(express.json())
 
   if (NODE_ENV === "production") {
-    app.use(auth({
-      idpLogout: true,
-      authorizationParams: {
-        response_type: "code",
-        scope: "openid profile email groups",
-      },
-      routes: {
-        callback: "/auth/callback",
-      },
-    }))
+    // app.use(auth({
+    //   idpLogout: true,
+    //   authorizationParams: {
+    //     response_type: "code",
+    //     scope: "openid profile email groups",
+    //   },
+    //   routes: {
+    //     callback: "/auth/callback",
+    //   },
+    // }))
   }
 
   app.use(apiRouter)

@@ -134,24 +134,22 @@ export default function EnvironmentRow({id}: Props): ReactElement {
         )}
       </Td>
       <Td>
-        {data.lifetime && (
-          <div className={"text-center"}>
-            <div className={"text-xs mb-2"}>
-              {lifetime.humanReadable}
-            </div>
-            {lifetime.lifePercent > 0 && lifetime.lifePercent < 100 ? (
-              <div className={"h-1 w-full rounded-xl bg-kuttle-gradient relative"}>
-                <div
-                  className={"h-1 bg-white absolute right-0 top-0 bottom-0"}
-                  style={{
-                    width: `${100 - lifetime.lifePercent}%`,
-                  }} />
-              </div>
-            ) : (
-              <div className={"h-1 w-full rounded-xl bg-gray3"} />
-            )}
+        <div className={"text-center"}>
+          <div className={"text-xs mb-2"}>
+            {lifetime.humanReadable}
           </div>
-        )}
+          {lifetime.lifePercent > 0 && lifetime.lifePercent < 100 ? (
+            <div className={"h-1 w-full rounded-xl bg-kuttle-gradient relative"}>
+              <div
+                className={"h-1 bg-white absolute right-0 top-0 bottom-0"}
+                style={{
+                  width: `${100 - lifetime.lifePercent}%`,
+                }} />
+            </div>
+          ) : (
+            <div className={"h-1 w-full rounded-xl bg-gray3"} />
+          )}
+        </div>
       </Td>
       <Td>
         <div className={"flex"}>
