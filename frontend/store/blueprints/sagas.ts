@@ -2,7 +2,7 @@ import axios from "axios"
 import {call, put, select, takeLeading} from "redux-saga/effects"
 
 import errorHandler from "../../helpers/errorHandler"
-import {Blueprint} from "../dto"
+import {BlueprintRef} from "../dto"
 import {AppState, SagaGenerator} from "../types"
 
 import {failFetchBlueprints, loadBlueprints} from "./actions"
@@ -14,7 +14,7 @@ export function* watchFetchBlueprints(): SagaGenerator {
   yield takeLeading<FetchBlueprintsAction["type"]>("FetchBlueprints", function* fetchBlueprintsEffect() {
     try {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      const {data}: {data: Blueprint[]} = yield call(axios, "/api/blueprints")
+      const {data}: {data: BlueprintRef[]} = yield call(axios, "/api/blueprints")
 
       if (Array.isArray(data) && data.length > 0) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

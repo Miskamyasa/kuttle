@@ -1,4 +1,4 @@
-import React, {ReactElement} from "react"
+import {ReactElement} from "react"
 
 import {Outlet} from "react-router-dom"
 
@@ -7,6 +7,7 @@ import BellRing from "../icons/BellRing"
 import Logo from "../logo/Logo"
 import Modal from "../modal/Modal"
 import Tabs from "../tabs/Tabs"
+import Toaster from "../toast/Toaster"
 
 
 export default function Layout(): ReactElement {
@@ -28,6 +29,7 @@ export default function Layout(): ReactElement {
       <div className={"w-full bg-gray3 flex-grow"}>
         <Outlet />
       </div>
+      <Toaster />
       <Modal />
     </div>
   )

@@ -1,6 +1,7 @@
 import {ReactElement} from "react"
 
 import {getMonthlyCosts} from "../../helpers/getCosts"
+import getHardware from "../../helpers/getHardware"
 import {useAppSelector} from "../../store/createStore"
 import {selectEnvironmentsStore} from "../../store/environments/selectors"
 import Table from "../table/Table"
@@ -15,7 +16,7 @@ interface Props {
 export default function AppSettings({environmentId}: Props): ReactElement {
   const store = useAppSelector(selectEnvironmentsStore)
 
-  const {services, costs} = store[environmentId]
+  const {services, hourlyPrice} = store[environmentId]
 
   return (
     <Table>
@@ -31,21 +32,21 @@ export default function AppSettings({environmentId}: Props): ReactElement {
         {services?.map(service => (
           <tr key={service.name}>
             <Td sm>
-              <div className={"flex items-baseline"}>
-                <div className={"border border-green overflow-hidden rounded relative"}>
-                  <div className={"z-2 text-xs px-1 py-0.5"}>v{service.version}</div>
-                  <div className={"absolute w-100 h-100 z-1 top-0 right-0 bottom-0 left-0 bg-green opacity-10"} />
-                </div>
-                <div className={"ml-2"}>
-                  {service.name}
-                </div>
+              <div className={"ml-2"}>
+                {service.name}
               </div>
             </Td>
             <Td sm>
-              {`${service.cpu} vCPU + ${service.memory} Gb RAM`}
+              {getHardware(service)}
             </Td>
-            <Td sm>{service.git_repo}</Td>
-            <Td sm>{getMonthlyCosts(costs.hourly)}</Td>
+            <Td sm>
+              <a
+                className={"text-blue1"}
+                href={service.gitRepo}>
+                {service.gitRepo}
+              </a>
+            </Td>
+            <Td sm>{hourlyPrice ? getMonthlyCosts(hourlyPrice) : "Unknown"}</Td>
           </tr>
         ))}
       </tbody>

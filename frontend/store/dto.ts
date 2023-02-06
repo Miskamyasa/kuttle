@@ -1,86 +1,107 @@
-export interface Blueprint {
+export interface Variable {
   name: string
-  version?: number | null
-  default_version?: number | null
-  location?: null
+  value: string
 }
 
-export interface Cicd {
-  status: "done" | "inflight" | "unknown" | "fail"
-  method: string
-  version?: string | null
-  branch: string
-  path_to_manifest?: null
-}
-
-export interface Service {
+export interface SecretVariable {
   name: string
-  version?: string | null
-  cpu: number
-  memory: number
-  git_repo?: null
-  cicd: Cicd
-  public: boolean
+  value: string
 }
 
 export interface Resource {
   name: string
   type: "sql" | "nosql" | "cache" | "object"
-  kind: string
-  status: "healthy" | "degraded" | "outage" | "unknown"
+  kind: "s3" | "rds" | "redis"
+  externalID: string
+  status: "healthy" | "unhealthy"
+  hourlyPrice?: number
+}
+
+export interface BlueprintRef {
+  name: string
+  version: string
+  location: string
+}
+
+export interface ServicePort {
+  name: string
+  port: number
+}
+
+export interface ServiceExpose {
+  type: string
+  // Applicable only for ingress type.
+  hostname: string
+}
+
+export interface ServiceImageBuild {
+  dockerfile?: string
+  context?: string
+  tags?: string
+  status?: "pending" | "building" | "failed" | "success"
 }
 
 export interface Lifetime {
-  created: number
-  destroy: number
+  createdAt: Date
+  destroyAfter: Date
 }
 
-export interface Owners {
-  id: number
+export interface Owner {
+  id: string
+  fullName: string
+}
+
+export interface Service {
   name: string
+  cpu: string
+  memory: string
+  gitRepo?: string
+  ports?: ServicePort[]
+  replicas?: number
+  expose?: ServiceExpose
+  variables?: Variable[]
+  secretVariables?: SecretVariable[]
+  // Static image. Cannot be used with ImageBuild field
+  image?: string
+  // Image built from Dockerfile. Cannot be used with Image field
+  imageBuild?: ServiceImageBuild
+  command?: string[]
+  args?: string[]
+  status: "healthy" | "unhealthy" | "progressing"
+  hourlyPrice: number
 }
 
-export interface Test {
-  name: string
-  status: "running" | "success" | "fail" | "unknown"
-}
-
-export interface Costs {
-  hourly: number
-}
-
-export interface Logs {
-  dest?: string
-  path?: string
-}
-
-export interface Link {
+export interface Log {
+  storageType: string
   url: string
 }
 
 export interface Environment {
   name: string
-  full_name: string
-  blueprint: Blueprint
-  services?: Array<Service> | null
-  resources?: Array<Resource> | null
+  fullName: string
+  blueprint: BlueprintRef
+  services?: Service[]
+  resources?: Resource[]
+  hourlyPrice?: number
+  currency?: string
   lifetime: Lifetime
-  owners: Owners
-  tests?: Array<Test> | null
-  costs: Costs
-  logs?: Logs | null
-  links?: Array<Link> | null
-  description?: null
+  variables?: Variable[]
+  secrets?: SecretVariable[]
+  owner?: Owner
+  logs?: string[]
+  links?: string[]
+  comment?: string
 }
 
 export interface Region {
   region: string
-  short_region: string
-  name: string
-  environments?: Array<Environment> | null
+  regionCode: string
+  regionName: string
+  environments: Environment[]
 }
 
 export interface Account {
-  account_name: string
-  regions?: Array<Region> | null
+  accountName: string
+  accountShortName: string
+  regions: Region[]
 }

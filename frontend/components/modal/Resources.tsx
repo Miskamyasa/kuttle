@@ -15,7 +15,7 @@ interface Props {
 export default function Resources({environmentId}: Props): ReactElement {
   const store = useAppSelector(selectEnvironmentsStore)
 
-  const {resources, costs} = store[environmentId]
+  const {resources} = store[environmentId]
 
   return (
     <Table>
@@ -33,7 +33,7 @@ export default function Resources({environmentId}: Props): ReactElement {
             <Td sm>{resource.name}</Td>
             <Td sm>Unknown (Nodes)</Td>
             <Td sm>{resource.type}</Td>
-            <Td sm>{getMonthlyCosts(costs.hourly)}</Td>
+            <Td sm>{resource.hourlyPrice ? getMonthlyCosts(resource.hourlyPrice) : "Unknown"}</Td>
           </tr>
         ))}
       </tbody>

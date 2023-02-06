@@ -60,7 +60,7 @@
     "indent": ["error", 2, {"SwitchCase": 1}],
     "linebreak-style": ["error", "unix"],
     "max-len": ["warn", {"code": 120}],
-    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-console": ["error", { "allow": ["warn", "error", "debug"] }],
     "no-duplicate-imports": "error",
     "no-multiple-empty-lines": ["error", {"max": 2, "maxEOF": 0}],
     "no-use-before-define": "error",
@@ -101,6 +101,12 @@
           }
         ],
         "react/react-in-jsx-scope": "off"
+      }
+    },
+    {
+      "files": ["sagas.ts"],
+      "rules": {
+        "@typescript-eslint/no-unsafe-assignment": 0
       }
     }
   ]
