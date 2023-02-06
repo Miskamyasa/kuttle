@@ -1,4 +1,4 @@
-import {ReactElement} from "react"
+import {ReactElement, useEffect} from "react"
 
 import {toast} from "react-hot-toast"
 import {useSearchParams} from "react-router-dom"
@@ -35,8 +35,13 @@ export default function Environment(): ReactElement | null {
 
   const id = searchParams.get("id")
 
-  if (!id || !store[id]) {
-    toast.error("Environment not found")
+  useEffect(() => {
+    if (id && !store[id]) {
+      toast.error("Environment not found")
+    }
+  }, [id, store])
+
+  if (!id || (id && !store[id])) {
     return null
   }
 
