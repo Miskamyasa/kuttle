@@ -46,7 +46,7 @@ export default function AppSettings({environmentId}: Props): ReactElement {
                 {service.gitRepo}
               </a>
             </Td>
-            <Td sm>{hourlyPrice ? getMonthlyCosts(hourlyPrice) : "Unknown"}</Td>
+            <Td sm>{hourlyPrice ? getMonthlyCosts(service.hourlyPrice) : "Unknown"}</Td>
           </tr>
         ))}
       </tbody>
