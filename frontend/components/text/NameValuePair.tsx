@@ -18,7 +18,7 @@ export default function NameValuePair({name, value, type, wrapperClassName}: Pro
         <NameValueDate
           wrapperClassName={wrapperClassName}
           name={name}
-          value={value as number} />
+          value={new Date(value)} />
       )
     case "text":
       return (

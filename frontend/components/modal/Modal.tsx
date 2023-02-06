@@ -12,8 +12,6 @@ export default function Modal(): ReactElement {
 
   const [content, setContent] = useState<null | ReactNode>()
 
-  const ready = true // useAppSelector(state => state.common.ready)
-
   const modalShow = searchParams.get("modal")
 
   const top = useRef<number>(LAYOUT.HEADER_HEIGHT)
@@ -54,11 +52,11 @@ export default function Modal(): ReactElement {
 
   return (
     <div
-      style={{top: `${top.current}px`, visibility: content && ready ? "visible" : "hidden"}}
+      style={{top: `${top.current}px`, visibility: content ? "visible" : "hidden"}}
       className={"fixed right-0 bottom-0 left-0 w-screen bg-black/25 backdrop-blur-[3px]"}
       onClick={dismiss}>
       <div
-        className={className + ((content && ready) ? "translate-x-0" : "translate-x-96")}
+        className={className + (content ? "translate-x-0" : "translate-x-96")}
         onClick={stopPropagation}>
         {content}
       </div>

@@ -2,7 +2,7 @@ import axios from "axios"
 import {call, put, select, takeLeading} from "redux-saga/effects"
 
 import errorHandler from "../../helpers/errorHandler"
-import {Account} from "../dto"
+import {Account as AccountDTO} from "../dto"
 import {selectEnvironmentsStore} from "../environments/selectors"
 import {EnvironmentId, EnvironmentsReducerState} from "../environments/types"
 import {selectRegionsStore} from "../regions/selectors"
@@ -17,55 +17,58 @@ import {FetchAccountsAction} from "./types"
 export function* watchFetchAccounts(): SagaGenerator {
   yield takeLeading<FetchAccountsAction["type"]>("FetchAccounts", function* fetchAccountsEffect() {
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      const {data}: {data: Account[]} = yield call(axios, "/api/dashboard")
+      const {data}: {data: AccountDTO[]} = yield call(axios, "/api/dashboard")
 
       if (Array.isArray(data) && data.length > 0) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const accountsState: AppState["accounts"] = yield select(selectAccounts)
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const regionsStore: RegionsReducerState["store"] = yield select(selectRegionsStore)
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const envStore: EnvironmentsReducerState["store"] = yield select(selectEnvironmentsStore)
 
         const accountsIds = new Set(accountsState.ids)
+
         for (const accountData of data) {
           const {regions, ...account} = accountData
 
-          const accountId = account.account_name.toLowerCase()
+          const accountId = account.accountName.trim()
 
-          const ids: RegionId[] = []
+          const ids: Set<RegionId> = new Set()
 
           if (Array.isArray(regions) && regions.length > 0) {
             for (const regionData of regions) {
-              const regionId = `${accountId}-${regionData.short_region}`
+              const regionId = `${accountId}-${regionData.region.trim()}`
               const {environments, ...region} = regionData
 
-              const envIds: EnvironmentId[] = []
+              const envIds: Set<EnvironmentId> = new Set()
               if (Array.isArray(environments) && environments.length > 0) {
                 for (const envData of environments) {
-                  const {full_name: envId} = envData
+                  const envId = envData.fullName.trim()
                   envStore[envId] = {
                     ...envData,
                     regionId,
                     accountId,
+                    hourlyPrice: envData.hourlyPrice || envData.services?.reduce((acc, {hourlyPrice = 0}) => {
+                      if (typeof hourlyPrice === "number") {
+                        return acc += hourlyPrice
+                      }
+                      return acc
+                    }, 0),
                   }
-                  envIds.push(envId)
+                  envIds.add(envId)
                 }
               }
 
               regionsStore[regionId] = {
                 ...region,
                 accountId,
-                environments: envIds,
+                environments: Array.from(envIds),
               }
-              ids.push(regionId)
+              ids.add(regionId)
             }
           }
 
           accountsState.store[accountId] = {
             ...account,
-            regions: ids,
+            regions: Array.from(ids),
           }
           accountsIds.add(accountId)
         }

@@ -5,7 +5,7 @@ import dayjs from "dayjs"
 
 interface Props {
   name: string
-  value: number
+  value: Date
   wrapperClassName?: string
 }
 
@@ -15,11 +15,11 @@ export default function NameValueDate({name, value, wrapperClassName}: Props): R
       <div className={"flex flex-row items-baseline mb-1"}>
         <div className={"text-xs text-gray1 mr-3"}>{name}:</div>
         <div className={"text-blueDark"}>
-          {dayjs(value * 1000).format("dd, MMMM D, YYYY")}
+          {new Date(value).toDateString()}
         </div>
       </div>
       <div className={"text-xs text-gray1"}>
-        {dayjs(value * 1000).fromNow()}
+        {dayjs(value).fromNow()}
       </div>
     </div>
   )

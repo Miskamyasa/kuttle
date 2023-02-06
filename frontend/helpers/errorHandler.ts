@@ -1,7 +1,11 @@
+import toast from "react-hot-toast"
+
+
 export default function errorHandler(err: unknown): void {
-  // eslint-disable-next-line no-console
+  const {message} = err as {message: string}
   console.warn(err)
 
+  toast.error(message)
+
   // TODO: Log error to some error logging service
-  // TODO: User notification via some kind on toast
 }

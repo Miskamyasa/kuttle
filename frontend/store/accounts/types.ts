@@ -8,7 +8,7 @@ interface Account extends Omit<AccountDTO, "regions"> {
   regions: RegionId[]
 }
 
-export type AccountId = Account["account_name"]
+export type AccountId = Account["accountName"]
 
 export interface AccountsReducerState extends Loadable {
   store: Record<AccountId, Account>

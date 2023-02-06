@@ -17,7 +17,7 @@ export default function Header({accountId}: Props): ReactElement {
 
   return (
     <div className={"flex justify-between items-center"}>
-      <Name text={store[accountId].account_name} />
+      <Name text={store[accountId].accountName} />
       <Button
         text={"Add New Region"}
         variant={"primary"} />

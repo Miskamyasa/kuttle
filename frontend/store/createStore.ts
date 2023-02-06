@@ -3,6 +3,8 @@ import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux"
 import {createStore, applyMiddleware, Dispatch} from "redux"
 import sagaMiddlewareFactory from "redux-saga"
 
+import errorHandler from "../helpers/errorHandler"
+
 import rootReducer from "./rootReducer"
 import rootSaga from "./rootSaga"
 import {Actions, AppState, ConfiguredStore} from "./types"
@@ -10,15 +12,9 @@ import {Actions, AppState, ConfiguredStore} from "./types"
 
 function configureStore(): ConfiguredStore {
   const sagaMiddleware = sagaMiddlewareFactory({
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onError(error: Error, errorInfo: {sagaStack: string}) {
-      // eslint-disable-next-line no-console
-      console.debug({
-        error,
-        errorInfo,
-      })
-      // TODO: report error to backend.
-      // this is not a one-size-fits-all solution, you must write a try/catch block in every saga generator
+      console.debug({errorInfo})
+      errorHandler(error)
     },
   })
 

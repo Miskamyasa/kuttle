@@ -1,12 +1,12 @@
 import {Loadable} from "../../helpers/types"
 import {ResetAction} from "../common/types"
-import {Blueprint} from "../dto"
+import {BlueprintRef} from "../dto"
 
 
 export type BlueprintId = string
 
 export interface BlueprintsReducerState extends Loadable {
-  store: Record<BlueprintId, Blueprint>
+  store: Record<BlueprintId, BlueprintRef>
   ids: Array<BlueprintId>
 }
 

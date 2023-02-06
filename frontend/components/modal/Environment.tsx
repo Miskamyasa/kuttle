@@ -1,5 +1,6 @@
 import {ReactElement} from "react"
 
+import {toast} from "react-hot-toast"
 import {useSearchParams} from "react-router-dom"
 
 import {selectAccounts, selectAccountsStore} from "../../store/accounts/selectors"
@@ -35,34 +36,34 @@ export default function Environment(): ReactElement | null {
   const id = searchParams.get("id")
 
   if (!id || !store[id]) {
-    // TODO: report error to backend.
+    toast.error("Environment not found")
     return null
   }
 
-  const {full_name, blueprint, regionId, accountId} = store[id]
+  const {fullName, blueprint, regionId, accountId, lifetime} = store[id]
 
   return (
     <div className={"p-10"}>
       <div className={"text-xl text-blueDark"}>
-        {accountsStore[accountId].account_name}
+        {accountsStore[accountId].accountName}
         &nbsp;&nbsp;/&nbsp;&nbsp;
         {regionsStore[regionId].region}
         &nbsp;&nbsp;/&nbsp;&nbsp;
-        <span className={"font-bold "}>{full_name}</span>
+        <span className={"font-bold "}>{fullName}</span>
       </div>
       <div className={"mt-10 mb-5 flex flex-row flex-wrap"}>
         <NameValueDate
           wrapperClassName={"mr-16 mb-5"}
           name={"Created"}
-          value={1667313845} />
+          value={lifetime.createdAt} />
         <NameValueDate
           wrapperClassName={"mr-16 mb-5"}
-          name={"Last Deploy"}
-          value={1673473845} />
+          name={"Destroy after"}
+          value={lifetime.destroyAfter} />
         <NameValueText
           wrapperClassName={"mr-16 mb-5"}
           name={"Version"}
-          value={blueprint.version || "X.X.X"} />
+          value={blueprint.version || "Unknown"} />
       </div>
       <Card title={"Deploy method"}>
         <DeployMethod />

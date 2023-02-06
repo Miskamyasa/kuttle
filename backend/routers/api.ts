@@ -1,6 +1,6 @@
 import {Router} from "express"
 
-import dashboardJson from "../__mocks__/dashboard.json"
+import dashboardJson from "../__mocks__/dashboard_v2.json"
 
 
 const apiRouter = Router()
