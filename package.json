@@ -1,22 +1,20 @@
 {
   "name": "kuttle-ui-app",
-  "private": true,
-  "repository": "https://github.com/kuttleio/kuttle-ui-app",
-  "version": "0.0.1",
+  "private": false,
+  "version": "1.0.0",
   "scripts": {
-    "analyze": "npx vite-bundle-visualizer",
+    "analyze": "pnpx vite-bundle-visualizer",
     "build": "tsc && ts-node build.ts && vite build",
     "dev": "NODE_ENV=development nodemon --config nodemon.json",
     "lint": "eslint -c .eslintrc ./frontend ./backend --fix",
     "migrate": "knex migrate:latest",
-    "postinstall": "npx patch-package --use-yarn && husky install",
-    "preinstall": "npx only-allow yarn",
+    "postinstall": "pnpx patch-package --use-pnpm && husky install",
+    "preinstall": "pnpx only-allow pnpm",
     "prepare": "husky install",
     "preview": "vite preview",
     "start": "CROSS_ENV=production node -r module-alias/register ./dist --env=production"
   },
   "engines": {
-    "yarn": ">= 1.22",
     "node": ">=16.10.0 <17"
   },
   "dependencies": {
